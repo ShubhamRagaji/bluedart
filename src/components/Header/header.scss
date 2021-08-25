@@ -1,0 +1,31 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+
+  .label {
+    display: flex;
+    align-items: flex-end;
+
+    .dtdc-logo {
+      width: 12vw;
+    }
+
+    .headingbtn {
+      margin-left: 2vw;
+      padding: 0.8vw 4vw;
+      background: darkblue;
+      color: white;
+      font-size: 1.2vw;
+      border-radius: 1vw;
+    }
+  }
+  .user {
+    .user-icon {
+      width: 3vw;
+      margin-right: 1vw;
+      filter: drop-shadow(2px 2px 4px black);
+    }
+  }
+}

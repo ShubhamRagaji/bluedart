@@ -1,0 +1,45 @@
+.Menu {
+  background: white;
+  width: 4%;
+  box-shadow: 3px 3px 8px grey;
+  border-radius: 0.2vw;
+  padding: 1vw 0;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 1vw;
+
+  .Icons,
+  .logout_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profile {
+      width: 2.4vw;
+    }
+
+    .profile_hr {
+      width: 2.8vw;
+      margin-top: 1vw;
+    }
+
+    .menu_icon {
+      width: 1.6vw;
+      margin-top: 2vw;
+      filter: grayscale(1);
+      cursor: pointer;
+    }
+
+    .logout_icon {
+      filter: invert(1);
+    }
+
+    .hr {
+      width: 2.8vw;
+      margin-bottom: -1vw;
+    }
+  }
+}
