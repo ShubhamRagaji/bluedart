@@ -8,25 +8,34 @@ import "./alerts.scss";
 export default function Alerts() {
   const [activeBayGate, setactiveBayGate] = useState("All Alerts");
 
+  const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9", "Dipesh"]
+
   return (
     <div className="Alerts">
       <Header heading="Alerts" />
       <Menu />
-
+      {/* site===activeBayGate */}
+      {/* All Alerts === All ALerts */}
+      {/* BayGate2 === All Alrets */}
       <div className="alerts">
         <div className="baygates">
-          <BayGatesButtons bg_name="All Alerts" />
-          <BayGatesButtons bg_name="BayGate 2" />
-          <BayGatesButtons bg_name="BayGate 6" />
-          <BayGatesButtons bg_name="BayGate 9" />
+          {sites.map(site => <BayGatesButtons bg_name={site} isActive={site===activeBayGate} 
+          onClick={()=> setactiveBayGate(site)} />)}
+          
+          {/* <BayGatesButtons bg_name="BayGate 2" />
+          <BayGatesButtons bg_name="BayGate 6" /> */}
+          {/* <BayGatesButtons bg_name="BayGate 9" /> */}
 
           {/* <p className={activeBayGate === "BayGate 2" ? "baygate_toggle activebayGate" : "baygate_toggle"} onClick={() => setactiveBayGate("BayGate 2")}>BayGate 2</p>
           <p className={activeBayGate === "BayGate 9" ? "baygate_toggle activebayGate" : "baygate_toggle"} onClick={() => setactiveBayGate("BayGate 9")}>BayGate 9</p>
           <p className={activeBayGate === "BayGate 6" ? "baygate_toggle activebayGate" : "baygate_toggle"} onClick={() => setactiveBayGate("BayGate 6")}>BayGate 6</p> */}
         </div>
         <div className="al-buttons">
+        <BayGatesButtons bg_name="Business Analysis" />
           <button className="businessbtn">Business Analysis</button>
+
           <button className="businessbtn">Business Analysis</button>
+          
         </div>
         <div className="al-table">
           <table>
