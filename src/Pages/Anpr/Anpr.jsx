@@ -8,17 +8,17 @@ import BayGatesButtons from "../../components/BayGatesButtons/BayGatesButtons";
 import Table from "../../components/Tables/Table";
 import exit from "../../components/Images/exitImage.png";
 import VideoPopup from "../../components/Popups/VideoPopup";
+import Pagination from "../../components/pagination/Pagination";
 
 export default function Anpr() {
   const [activeBayGate, setactiveBayGate] = useState("All Alerts");
   const [activeAnalysis, setactiveAnalysis] = useState("Business Analysis");
 
-  const [videoPopup, setvideoPopup] = useState(false);
-
   const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9"];
   const analysisBtns = ["Business Analysis", "Security Analysis"];
 
-  const td = [
+  const columnNames = [
+    "Sr No",
     "Warehouse Location",
     "Camera Location",
     "Vehicle Number",
@@ -29,19 +29,26 @@ export default function Anpr() {
   ];
 
   const data = anpr;
-  const videosToShow = videos;
+  
+  const dataPerPage = 10
+  const totalPages = Math.round(data.length / dataPerPage)
+  const [currentPage, setCurrentPage] = useState(1);
 
-  let onMediaIconClick = (index) => {
-    console.log(index);
-    console.log(data[index].video);
-    return <VideoPopup videoName={data[index].video} />;
-  };
+  const pagination = (type) => {
+    if (type === "increment") {
+      setCurrentPage((page) => page + 1);
+    }
+    else {
+      setCurrentPage((page) => page - 1);
+    }
+  }
 
   return (
     <div className="Anpr">
       <Header heading="ANPR" />
       <Menu />
       <div className="anpr">
+
         <div className="baygates">
           {sites.map((site) => (
             <BayGatesButtons
@@ -68,34 +75,19 @@ export default function Anpr() {
         </div>
 
         <div className="anpr-table">
-          <Table>
-            <tr>
-              {td.map((td) => (
-                <th>{td}</th>
-              ))}
-            </tr>
-
-            {data.map((td, index) => (
-              <tr>
-                <td>{td.name}</td>
-                <td>{td.Age}</td>
-                <td>{td.Phone}</td>
-                <td>{td.UName}</td>
-
-                <td>{td.time}</td>
-
-                <td>{td.abc}</td>
-                <td>
-                  <img
-                    src={td.img}
-                    alt=""
-                    // onClick={() => onMediaIconClick(index)}
-                    onClick={() => (<VideoPopup videoName={data[index].video} />)}
-                  />
-                </td>
-              </tr>
-            ))}
+          <Table 
+            columnNames={columnNames} 
+            data={data.slice(currentPage * dataPerPage - dataPerPage, currentPage * dataPerPage)} 
+            offset={currentPage * dataPerPage - dataPerPage}
+          >
           </Table>
+
+          <Pagination 
+            currentPage={currentPage}
+            lastPage={totalPages}
+            nextPage={() => pagination("increment")}
+            prevPage={() => pagination("decrement")}
+          />
         </div>
       </div>
     </div>
