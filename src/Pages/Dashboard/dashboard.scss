@@ -1,8 +1,65 @@
 .Dashboard {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 
-  .dashboard {
-    padding: 1vw;
+  .dash {
+    padding-bottom: 2vw;
+
+    .dashboard {
+      padding-left: 7vw;
+      padding-top: 5vw;
+
+      display: flex;
+    }
+
+    .Graphs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 1vw;
+      position: relative;
+      padding-left: 7vw;
+
+      .barGraph {
+        width: 36%;
+        margin-bottom: 1vw;
+
+        canvas {
+          display: block;
+          box-sizing: border-box;
+          box-shadow: 3px 3px 8px grey;
+          padding: 1vw;
+        }
+      }
+
+      .DoughnutGraph {
+        width: 18%;
+
+        canvas {
+          box-shadow: 3px 3px 8px grey;
+          padding: 1vw;
+        }
+      }
+
+      .HorizontalGraph {
+        width: 36%;
+        margin-right: 3vw;
+
+        canvas {
+          box-shadow: 3px 3px 8px grey;
+          padding: 1vw;
+        }
+      }
+
+      .CrazyGraph {
+        // width: 36%;
+
+        canvas {
+          box-shadow: 3px 3px 8px grey;
+          padding: 1vw;
+        }
+      }
+    }
   }
 }

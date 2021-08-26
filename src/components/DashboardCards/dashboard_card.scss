@@ -1,0 +1,38 @@
+.DashboardCard {
+  box-shadow: 3px 3px 8px grey;
+  border-radius: 1vw;
+  margin: 0.6vw 2.4vw 1vw 0;
+  width: 16vw;
+
+  .card_name {
+    font-size: 1vw;
+    padding: 0.04vw 2vw;
+    height: 1.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card_icon {
+      width: 3vw;
+      height: 3vw;
+    }
+
+    .totalCount {
+      .amount {
+        font-size: 0.92vw;
+        color: grey;
+        padding-left: 1vw;
+      }
+
+      p:last-child {
+        font-size: 2vw;
+        margin-top: -0.2vw;
+      }
+    }
+  }
+}

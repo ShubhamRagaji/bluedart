@@ -4,12 +4,14 @@
   box-shadow: 3px 3px 8px grey;
   border-radius: 0.2vw;
   padding: 1vw 0;
-  height: 80vh;
+  height: 84%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
   left: 1vw;
+  top: 5.4vw;
+  position: fixed;
 
   .Icons,
   .logout_icon {
@@ -40,6 +42,12 @@
     .hr {
       width: 2.8vw;
       margin-bottom: -1vw;
+    }
+
+    .activeRoute {
+      .menu_icon {
+        filter: hue-rotate(130deg);
+      }
     }
   }
 }

@@ -1,0 +1,34 @@
+.Anpr {
+  .anpr {
+    box-shadow: 3px 3px 8px grey;
+    margin-left: 6.4vw;
+    margin-right: 2vw;
+    padding: 0vw 1vw 0.08vw 1vw;
+    border-radius: 0.4vw;
+    margin-top: 5.6vw;
+
+    .baygates {
+      display: flex;
+    }
+
+    .anpr-buttons {
+      display: flex;
+      margin: 1vw 0;
+
+      .businessSecuritybtn {
+        background: #52575d;
+        padding: 0.6vw 1vw;
+        color: white;
+        border-radius: 0.4vw;
+        cursor: pointer;
+        font-size: 1vw;
+        margin-right: 2vw;
+        box-shadow: 3px 3px 8px grey;
+      }
+
+      .activeAnalysis {
+        background: #d82b23;
+      }
+    }
+  }
+}

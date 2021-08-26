@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink, useHistory, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import "./logout.scss";
 import logout from '../../components/Images/logout.png';
 
 
 function Logout(props) {
-    const history = useHistory()
   return (
     <div className="LogoutPopup">
           <div className="Logout bounceInDown">

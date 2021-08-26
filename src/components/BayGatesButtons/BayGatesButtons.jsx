@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './baygates_btns.scss'
 
 export default function BayGatesButtons(props) {
-    const [activeBayGate, setactiveBayGate] = useState(false)
     return (
         <div className='BayGatesButtons'>
           <p className=

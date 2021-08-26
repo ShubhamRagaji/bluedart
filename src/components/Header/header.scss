@@ -3,6 +3,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 1vw;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: white;
 
   .label {
     display: flex;
@@ -24,8 +29,10 @@
   .user {
     .user-icon {
       width: 3vw;
-      margin-right: 1vw;
+      margin-right: 2vw;
       filter: drop-shadow(2px 2px 4px black);
+      border: 1px solid black;
+      border-radius: 2vw;
     }
   }
 }

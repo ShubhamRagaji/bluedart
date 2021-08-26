@@ -2,63 +2,71 @@ import React, { useState } from "react";
 import BayGatesButtons from "../../components/BayGatesButtons/BayGatesButtons";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
-import { data } from "../../data";
+import Table from "../../components/Tables/Table";
+import { alerts } from "../../data";
 import "./alerts.scss";
 
 export default function Alerts() {
   const [activeBayGate, setactiveBayGate] = useState("All Alerts");
+  const [activeAnalysis, setactiveAnalysis] = useState("Business Analysis");
 
-  const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9", "Dipesh"]
+  const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9"];
+  const analysisBtns = ["Business Analysis", "Security Analysis"];
+
+  const td = ["a", "a", "a", "a", "Videos"];
+
+  const data = alerts;
 
   return (
     <div className="Alerts">
       <Header heading="Alerts" />
       <Menu />
-      {/* site===activeBayGate */}
-      {/* All Alerts === All ALerts */}
-      {/* BayGate2 === All Alrets */}
       <div className="alerts">
         <div className="baygates">
-          {sites.map(site => <BayGatesButtons bg_name={site} isActive={site===activeBayGate} 
-          onClick={()=> setactiveBayGate(site)} />)}
-          
-          {/* <BayGatesButtons bg_name="BayGate 2" />
-          <BayGatesButtons bg_name="BayGate 6" /> */}
-          {/* <BayGatesButtons bg_name="BayGate 9" /> */}
-
-          {/* <p className={activeBayGate === "BayGate 2" ? "baygate_toggle activebayGate" : "baygate_toggle"} onClick={() => setactiveBayGate("BayGate 2")}>BayGate 2</p>
-          <p className={activeBayGate === "BayGate 9" ? "baygate_toggle activebayGate" : "baygate_toggle"} onClick={() => setactiveBayGate("BayGate 9")}>BayGate 9</p>
-          <p className={activeBayGate === "BayGate 6" ? "baygate_toggle activebayGate" : "baygate_toggle"} onClick={() => setactiveBayGate("BayGate 6")}>BayGate 6</p> */}
+          {sites.map((site) => (
+            <BayGatesButtons
+              bg_name={site}
+              isActive={site === activeBayGate}
+              onClick={() => setactiveBayGate(site)}
+            />
+          ))}
         </div>
+
         <div className="al-buttons">
-        <BayGatesButtons bg_name="Business Analysis" />
-          <button className="businessbtn">Business Analysis</button>
-
-          <button className="businessbtn">Business Analysis</button>
-          
+          {analysisBtns.map((item) => (
+            <button
+              className={
+                activeAnalysis === item
+                  ? "businessSecuritybtn activeAnalysis"
+                  : "businessSecuritybtn"
+              }
+              onClick={() => setactiveAnalysis(item)}
+            >
+              {item}
+            </button>
+          ))}
         </div>
-        <div className="al-table">
-          <table>
+
+        <div className="alerts-table">
+          <Table>
             <tr>
-              <th>Serial No.</th>
-              <th>Time Stamp</th>
-              <th>Number Plate</th>
-              <th>Vehicle Type</th>
-              <th>Video</th>
+              {td.map((td) => (
+                <th>{td}</th>
+              ))}
             </tr>
 
-            {data.map((item) => (
+            {data.map((td) => (
               <tr>
-                <td>{item.name}</td>
+                <td>{td.name}</td>
+                <td>{td.Age}</td>
+                <td>{td.Phone}</td>
+                <td>{td.UName}</td>
                 <td>
-                  <img src={item.img} alt="" />
+                  <img src={td.img} alt="" />
                 </td>
-                <td>{item.np}</td>
-                <td>{item.veh_type}</td>
-                <td></td>
               </tr>
             ))}
-          </table>
+          </Table>
         </div>
       </div>
     </div>
