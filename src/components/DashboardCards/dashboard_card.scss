@@ -2,7 +2,7 @@
   box-shadow: 3px 3px 8px grey;
   border-radius: 1vw;
   margin: 0.6vw 2.4vw 1vw 0;
-  width: 16vw;
+  width: 12vw;
 
   .card_name {
     font-size: 1vw;
@@ -20,6 +20,7 @@
     .card_icon {
       width: 3vw;
       height: 3vw;
+      object-fit: contain;
     }
 
     .totalCount {
@@ -30,7 +31,7 @@
       }
 
       p:last-child {
-        font-size: 2vw;
+        font-size: 1.6vw;
         margin-top: -0.2vw;
       }
     }

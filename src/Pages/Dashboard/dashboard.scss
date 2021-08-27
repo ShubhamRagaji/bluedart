@@ -9,8 +9,8 @@
     .dashboard {
       padding-left: 7vw;
       padding-top: 5vw;
-
       display: flex;
+      justify-content: center;
     }
 
     .Graphs {
@@ -20,6 +20,7 @@
       font-size: 1vw;
       position: relative;
       padding-left: 7vw;
+      z-index: -1;
 
       .barGraph {
         width: 36%;
@@ -53,11 +54,25 @@
       }
 
       .CrazyGraph {
-        // width: 36%;
+        width: 57.6%;
 
         canvas {
           box-shadow: 3px 3px 8px grey;
           padding: 1vw;
+        }
+      }
+
+      .rangeBar {
+        width: 32vw;
+        box-shadow: 4px 4px 10px grey;
+        padding: 1vw;
+        margin-right: 2vw;
+        // height: 20vw;
+        margin-top: 3.4vw;
+
+        .rangeBar_Header {
+          font-size: 1vw;
+          margin-top: -0.1vw;
         }
       }
     }

@@ -1,26 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DashboardCard from "../../components/DashboardCards/DashboardCard";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import "./dashboard.scss";
-import { card_details } from "../../data";
+import { card_details, progressBar } from "../../data";
 import { Bar, Doughnut } from "react-chartjs-2";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
 
 const card = card_details;
 
 export default function Dashboard() {
+const [progressedData, setprogressedData] = useState(progressBar)
+
+const setBg = () => {
+  return "#" + Math.floor(Math.random()*16777215).toString(16); 
+}
+
+useEffect(() => {
+  const newArr = progressBar.map(v => ({...v, backgroundColor: setBg()}))
+  setprogressedData(newArr)
+}, [])
+
   //Bar Graph
   const data = {
-    labels: ["1", "2", "3", "4", "5", "6"],
+    labels: ["16-08-2021", "17-08-2021", "18-08-2021", "19-08-2021", "20-08-2021"],
     datasets: [
       {
         label: "Vehicle In",
-        data: [12, 19, 3, 5, 2, 3],
+        data: [0,15,26,21,0],
         backgroundColor: "#d82b23",
       },
       {
         label: "Vehicle Out",
-        data: [2, 3, 20, 5, 1, 4],
+        data: [0,0,0,0,0],
         backgroundColor: "darkblue",
       },
     ],
@@ -32,6 +44,7 @@ export default function Dashboard() {
         {
           ticks: {
             beginAtZero: true,
+
           },
         },
       ],
@@ -173,7 +186,7 @@ export default function Dashboard() {
 
         <div className="Graphs">
           <div className="barGraph">
-            <p>Bar</p>
+            <p>Vehicle In & Out</p>
             <Bar data={data} options={options} />
           </div>
 
@@ -188,6 +201,20 @@ export default function Dashboard() {
           <div className="CrazyGraph">
             <p>Crazy Graph</p>
             <Bar height={400} width={950} data={crazyData} options={options4} />
+          </div>
+
+          <div className="rangeBar">
+            <p className="rangeBar_Header">Guideline Compliance Store</p>
+            <hr />
+
+            {progressedData.map((progressBar, index) => (
+              <ProgressBar
+                name={progressBar.name}
+                percentage={progressBar.percent}
+                backgroundColor={progressBar.backgroundColor}
+                id={"bar-" + index}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -18,6 +18,10 @@
     padding: 1vw;
   }
 
+  td:last-child {
+    cursor: pointer;
+  }
+
   tr:nth-child(even) {
     background-color: #fff0f0;
   }

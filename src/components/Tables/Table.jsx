@@ -9,7 +9,7 @@ export default function Table(props) {
 
   return (
     <div className="Table">
-      {video &&  <VideoPopup onClick={()=> setVideo(null)} videoName={video}/>}
+      {video && <VideoPopup onClick={()=> setVideo(null)} videoName={video}/>}
       
       <table>
           <tr>

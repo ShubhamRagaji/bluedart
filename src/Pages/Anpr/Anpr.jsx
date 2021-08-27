@@ -3,11 +3,8 @@ import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import "./anpr.scss";
 import { anpr } from "../../data";
-import { videos } from "../../data";
 import BayGatesButtons from "../../components/BayGatesButtons/BayGatesButtons";
 import Table from "../../components/Tables/Table";
-import exit from "../../components/Images/exitImage.png";
-import VideoPopup from "../../components/Popups/VideoPopup";
 import Pagination from "../../components/pagination/Pagination";
 
 export default function Anpr() {
@@ -29,26 +26,25 @@ export default function Anpr() {
   ];
 
   const data = anpr;
-  
-  const dataPerPage = 10
-  const totalPages = Math.round(data.length / dataPerPage)
+
+  //Pagination
+  const dataPerPage = 10;
+  const totalPages = Math.round(data.length / dataPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const pagination = (type) => {
     if (type === "increment") {
       setCurrentPage((page) => page + 1);
-    }
-    else {
+    } else {
       setCurrentPage((page) => page - 1);
     }
-  }
+  };
 
   return (
     <div className="Anpr">
       <Header heading="ANPR" />
       <Menu />
       <div className="anpr">
-
         <div className="baygates">
           {sites.map((site) => (
             <BayGatesButtons
@@ -75,14 +71,16 @@ export default function Anpr() {
         </div>
 
         <div className="anpr-table">
-          <Table 
-            columnNames={columnNames} 
-            data={data.slice(currentPage * dataPerPage - dataPerPage, currentPage * dataPerPage)} 
+          <Table
+            columnNames={columnNames}
+            data={data.slice(
+              currentPage * dataPerPage - dataPerPage,
+              currentPage * dataPerPage
+            )}
             offset={currentPage * dataPerPage - dataPerPage}
-          >
-          </Table>
+          ></Table>
 
-          <Pagination 
+          <Pagination
             currentPage={currentPage}
             lastPage={totalPages}
             nextPage={() => pagination("increment")}

@@ -8,18 +8,21 @@ $desk: 100/1980;
   width: 80%;
   border-radius: 5 * $desk + vw;
   height: 58 * $desk + vw;
-  background: #2029a0;
+  background: darkblue;
   justify-content: center;
   align-items: center;
-  margin-top: 2vw;
-  margin-bottom: 1vw;
   font-family: Segoe UI;
+  position: fixed;
+  bottom: 2vw;
+  left: 12vw;
+
   .leftArrow {
     width: 26 * $desk + vw;
     height: 22 * $desk + vw;
     margin-right: 22 * $desk + vw;
     cursor: pointer;
   }
+
   .leftArrowDisabled {
     width: 26 * $desk + vw;
     height: 22 * $desk + vw;
@@ -38,6 +41,7 @@ $desk: 100/1980;
     transform: rotate(180deg);
     // cursor: pointer;
   }
+
   .pageStart {
     width: 45 * $desk + vw;
     height: 26 * $desk + vw;
@@ -50,6 +54,7 @@ $desk: 100/1980;
     font-size: 18 * $desk + vw;
     color: black;
   }
+
   .pageEnd {
     width: 45 * $desk + vw;
     height: 26 * $desk + vw;
@@ -62,10 +67,12 @@ $desk: 100/1980;
     font-size: 18 * $desk + vw;
     color: black;
   }
+
   p {
     margin-right: 22 * $desk + vw;
     color: white;
   }
+
   .of {
     font-size: 21 * $desk + vw;
   }

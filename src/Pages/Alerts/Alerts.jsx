@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BayGatesButtons from "../../components/BayGatesButtons/BayGatesButtons";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
+import Pagination from "../../components/pagination/Pagination";
 import Table from "../../components/Tables/Table";
 import { alerts } from "../../data";
 import "./alerts.scss";
@@ -13,9 +14,22 @@ export default function Alerts() {
   const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9"];
   const analysisBtns = ["Business Analysis", "Security Analysis"];
 
-  const td = ["a", "a", "a", "a", "Videos"];
+  const td = ["Sr. No", "a", "a", "a", "a", "Videos"];
 
   const data = alerts;
+
+  //Pagination
+  const dataPerPage = 10;
+  const totalPages = Math.round(data.length / dataPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const pagination = (type) => {
+    if (type === "increment") {
+      setCurrentPage((page) => page + 1);
+    } else {
+      setCurrentPage((page) => page - 1);
+    }
+  };
 
   return (
     <div className="Alerts">
@@ -48,25 +62,21 @@ export default function Alerts() {
         </div>
 
         <div className="alerts-table">
-          <Table>
-            <tr>
-              {td.map((td) => (
-                <th>{td}</th>
-              ))}
-            </tr>
+          <Table
+            columnNames={td}
+            data={data.slice(
+              currentPage * dataPerPage - dataPerPage,
+              currentPage * dataPerPage
+            )}
+            offset={currentPage * dataPerPage - dataPerPage}
+          ></Table>
 
-            {data.map((td) => (
-              <tr>
-                <td>{td.name}</td>
-                <td>{td.Age}</td>
-                <td>{td.Phone}</td>
-                <td>{td.UName}</td>
-                <td>
-                  <img src={td.img} alt="" />
-                </td>
-              </tr>
-            ))}
-          </Table>
+          <Pagination
+            currentPage={currentPage}
+            lastPage={totalPages}
+            nextPage={() => pagination("increment")}
+            prevPage={() => pagination("decrement")}
+          />
         </div>
       </div>
     </div>
