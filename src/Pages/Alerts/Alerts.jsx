@@ -4,7 +4,8 @@ import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import Pagination from "../../components/pagination/Pagination";
 import Table from "../../components/Tables/Table";
-import { alerts } from "../../data";
+// import { alerts } from "../../data";
+import { alerts } from "../../dummy_data/alerts";
 import "./alerts.scss";
 
 export default function Alerts() {
@@ -14,7 +15,7 @@ export default function Alerts() {
   const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9"];
   const analysisBtns = ["Business Analysis", "Security Analysis"];
 
-  const td = ["Sr. No", "a", "a", "a", "a", "Videos"];
+  const td = ["Sr. No", "Priority", "Location", "Camera Location", "Camera Name", "Alert", "Date & Time", "Assigned To", "Status", "Media"];
 
   const data = alerts;
 

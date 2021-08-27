@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import "./anpr.scss";
 import { anpr } from "../../data";
+import { anpr_data } from "../../dummy_data/anpr";
 import BayGatesButtons from "../../components/BayGatesButtons/BayGatesButtons";
 import Table from "../../components/Tables/Table";
 import Pagination from "../../components/pagination/Pagination";
@@ -19,13 +20,13 @@ export default function Anpr() {
     "Warehouse Location",
     "Camera Location",
     "Vehicle Number",
-    "Entry Time & Date",
-    "Exit Time & Date",
+    "Entry  Date & Time",
+    "Exit  Date & Time",
     "Total Duration",
     "Media",
   ];
 
-  const data = anpr;
+  const data = anpr_data;
 
   //Pagination
   const dataPerPage = 10;
