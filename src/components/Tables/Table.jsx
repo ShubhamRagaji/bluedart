@@ -5,7 +5,7 @@ import './table.scss'
 
 export default function Table(props) {
   console.log(props.data)
-  const [video, setVideo] = useState(null)
+  const [video, setVideo] = useState(null)  
 
   return (
     <div className="Table fadeInDown">
@@ -24,7 +24,7 @@ export default function Table(props) {
                 Object.keys(row).map(
                   (rowData) => {
                     if (typeof(props.data[index][rowData]) === "string"){
-                      if (!props.data[index][rowData].includes(".mp4")){
+                      if (!props.data[index][rowData].includes(".mp4") || !props.data[index][rowData].includes(".jpg")){
                         if (props.data[index][rowData].includes("image")) {
                           return <td><img
                                       src={props.data[index][rowData]}

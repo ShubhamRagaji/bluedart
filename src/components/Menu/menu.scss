@@ -12,6 +12,7 @@
   left: 1vw;
   top: 5.4vw;
   position: fixed;
+  z-index: 1;
 
   .Icons,
   .logout_icon {
@@ -52,26 +53,4 @@
       }
     }
   }
-
-  // .Tooltip {
-  //   position: absolute;
-  //   background: black;
-  //   width: 4vw;
-  //   padding: 0vw 2vw;
-  //   z-index: 1;
-  //   border-radius: 0.6vw;
-  //   color: white;
-  //   font-size: 1vw;
-  // }
-
-  // .Tooltip::after {
-  //   content: "";
-  //   position: absolute;
-  //   background: black;
-  //   width: 1vw;
-  //   height: 1vw;
-  //   transform: rotate(45deg);
-  //   top: 19px;
-  //   left: -6px;
-  // }
 }

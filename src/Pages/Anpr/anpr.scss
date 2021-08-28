@@ -3,10 +3,9 @@
     box-shadow: 3px 3px 8px grey;
     margin-left: 6.4vw;
     margin-right: 2vw;
-    padding: 1vw 1vw 1vw 1vw;
+    padding: 0vw 1vw 1vw 1vw;
     border-radius: 0.4vw;
     margin-top: 5.6vw;
-    height: 43vw;
 
     .baygates {
       display: flex;
@@ -30,6 +29,13 @@
       .activeAnalysis {
         background: #d82b23;
       }
+    }
+    .noData {
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.6vw;
     }
   }
 }

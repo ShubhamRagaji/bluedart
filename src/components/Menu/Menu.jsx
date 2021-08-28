@@ -19,6 +19,8 @@ export default function Menu() {
           placement="right"
           fadeDuration={400}
           radius={4}
+          style={{zIndex: "1"}}
+          
         >
           <NavLink to="/dashboard" activeClassName="activeRoute">
             <img src={dashboard} alt="dashboard" className="menu_icon" />

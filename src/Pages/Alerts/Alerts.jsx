@@ -4,7 +4,7 @@ import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import Pagination from "../../components/pagination/Pagination";
 import Table from "../../components/Tables/Table";
-import { alerts } from "../../data";
+import { alerts, sec_analysis } from "../../dummy_data/alerts";
 import "./alerts.scss";
 
 export default function Alerts() {
@@ -14,13 +14,40 @@ export default function Alerts() {
   const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9"];
   const analysisBtns = ["Business Analysis", "Security Analysis"];
 
-  const td = ["Sr. No", "a", "a", "a", "a", "Videos"];
+  const td = [
+    "Sr. No",
+    "Priority",
+    "Location",
+    "Camera Location",
+    "Camera Name",
+    "Alert",
+    "Date & Time",
+    "Media",
+  ];
+
+  const security_td = [
+    "Sr. No",
+    "Priority",
+    "Location",
+    "Camera Location",
+    "Camera Name",
+    "Alert",
+    "Date & Time",
+    "Assigned To",
+    "Status",
+    "Camera Tampering",
+    "Alerts Detected",
+    "Accuracy",
+    "Media",
+  ];
 
   const data = alerts;
+  const security_data = sec_analysis;
 
   //Pagination
   const dataPerPage = 10;
-  const totalPages = Math.round(data.length / dataPerPage);
+  const totalPages = Math.ceil(data.length / dataPerPage);
+  const sec_analysis_totalPages = Math.ceil(security_data.length / dataPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const pagination = (type) => {
@@ -54,30 +81,58 @@ export default function Alerts() {
                   ? "businessSecuritybtn activeAnalysis"
                   : "businessSecuritybtn"
               }
-              onClick={() => setactiveAnalysis(item)}
+              onClick={() => {
+                setactiveAnalysis(item);
+                setactiveBayGate("All Alerts");
+              }}
             >
               {item}
             </button>
           ))}
         </div>
+        {activeBayGate === "All Alerts" || activeBayGate === "BayGate 2" ? (
+          <div>
+            {activeAnalysis === "Business Analysis" ? (
+              <div className="alerts-table">
+                <Table
+                  columnNames={td}
+                  data={data.slice(
+                    currentPage * dataPerPage - dataPerPage,
+                    currentPage * dataPerPage
+                  )}
+                  offset={currentPage * dataPerPage - dataPerPage}
+                ></Table>
 
-        <div className="alerts-table">
-          <Table
-            columnNames={td}
-            data={data.slice(
-              currentPage * dataPerPage - dataPerPage,
-              currentPage * dataPerPage
+                <Pagination
+                  currentPage={currentPage}
+                  lastPage={totalPages}
+                  nextPage={() => pagination("increment")}
+                  prevPage={() => pagination("decrement")}
+                />
+              </div>
+            ) : (
+              <div className="alerts-table">
+                <Table
+                  columnNames={security_td}
+                  data={security_data.slice(
+                    currentPage * dataPerPage - dataPerPage,
+                    currentPage * dataPerPage
+                  )}
+                  offset={currentPage * dataPerPage - dataPerPage}
+                ></Table>
+
+                <Pagination
+                  currentPage={currentPage}
+                  lastPage={sec_analysis_totalPages}
+                  nextPage={() => pagination("increment")}
+                  prevPage={() => pagination("decrement")}
+                />
+              </div>
             )}
-            offset={currentPage * dataPerPage - dataPerPage}
-          ></Table>
-
-          <Pagination
-            currentPage={currentPage}
-            lastPage={totalPages}
-            nextPage={() => pagination("increment")}
-            prevPage={() => pagination("decrement")}
-          />
-        </div>
+          </div>
+        ) : (
+          <p className="noData">No Data to Display</p>
+        )}
       </div>
     </div>
   );

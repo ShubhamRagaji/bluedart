@@ -2,34 +2,34 @@ import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import "./anpr.scss";
-import { anpr } from "../../data";
+import { anpr_data } from "../../dummy_data/anpr";
 import BayGatesButtons from "../../components/BayGatesButtons/BayGatesButtons";
 import Table from "../../components/Tables/Table";
 import Pagination from "../../components/pagination/Pagination";
 
 export default function Anpr() {
-  const [activeBayGate, setactiveBayGate] = useState("All Alerts");
-  const [activeAnalysis, setactiveAnalysis] = useState("Business Analysis");
+  const [activeBayGate, setactiveBayGate] = useState("All Reports");
 
-  const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9"];
-  const analysisBtns = ["Business Analysis", "Security Analysis"];
+  const sites = ["All Reports", "Main Gate", "BayGate 6", "BayGate 9"];
 
   const columnNames = [
     "Sr No",
     "Warehouse Location",
     "Camera Location",
     "Vehicle Number",
-    "Entry Time & Date",
-    "Exit Time & Date",
+    "Entry  Date & Time",
+    "Exit  Date & Time",
     "Total Duration",
     "Media",
+    
   ];
 
-  const data = anpr;
+  const data = anpr_data;
+  const [dataToDisplay, setdataToDisplay] = useState(data);
 
   //Pagination
   const dataPerPage = 10;
-  const totalPages = Math.round(data.length / dataPerPage);
+  // const totalPages = Math.ceil(data.length / dataPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const pagination = (type) => {
@@ -38,6 +38,14 @@ export default function Anpr() {
     } else {
       setCurrentPage((page) => page - 1);
     }
+  };
+
+  const filteredData = () => {
+    let filtered_data = data.filter(
+      (item) => item.camera_location === "Main Gate"
+    );
+    setdataToDisplay(filtered_data);
+    console.log(filtered_data);
   };
 
   return (
@@ -50,30 +58,23 @@ export default function Anpr() {
             <BayGatesButtons
               bg_name={site}
               isActive={site === activeBayGate}
-              onClick={() => setactiveBayGate(site)}
+              onClick={() => {
+                setactiveBayGate(site);
+                setCurrentPage(1);
+                if (site === "Main Gate") {
+                  filteredData();
+                } else {
+                  setdataToDisplay(data);
+                }
+              }}
             />
-          ))}
-        </div>
-
-        <div className="anpr-buttons bounceInDown">
-          {analysisBtns.map((item) => (
-            <button
-              className={
-                activeAnalysis === item
-                  ? "businessSecuritybtn activeAnalysis"
-                  : "businessSecuritybtn"
-              }
-              onClick={() => setactiveAnalysis(item)}
-            >
-              {item}
-            </button>
           ))}
         </div>
 
         <div className="anpr-table">
           <Table
             columnNames={columnNames}
-            data={data.slice(
+            data={dataToDisplay.slice(
               currentPage * dataPerPage - dataPerPage,
               currentPage * dataPerPage
             )}
@@ -82,7 +83,7 @@ export default function Anpr() {
 
           <Pagination
             currentPage={currentPage}
-            lastPage={totalPages}
+            lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
             nextPage={() => pagination("increment")}
             prevPage={() => pagination("decrement")}
           />
