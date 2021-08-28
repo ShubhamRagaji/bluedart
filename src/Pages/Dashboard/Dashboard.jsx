@@ -17,7 +17,7 @@ const setBg = () => {
 }
 
 useEffect(() => {
-  const newArr = progressBar.map(v => ({...v, backgroundColor: setBg()}))
+  const newArr = progressBar.map(backgnd_clr => ({...backgnd_clr, backgroundColor: setBg()}))
   setprogressedData(newArr)
 }, [])
 

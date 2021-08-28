@@ -3,7 +3,7 @@ import "./dashboard_card.scss";
 
 export default function DashboardCard(props) {
   return (
-    <div className="DashboardCard">
+    <div className="DashboardCard fadeInDown">
       <p className="card_name">{props.card_name}</p>
       <hr />
       <div className="count">

@@ -8,7 +8,7 @@ export default function Table(props) {
   const [video, setVideo] = useState(null)
 
   return (
-    <div className="Table">
+    <div className="Table fadeInDown">
       {video && <VideoPopup onClick={()=> setVideo(null)} videoName={video}/>}
       
       <table>

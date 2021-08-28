@@ -358,6 +358,6 @@ export const progressBar = [{
   percent:"88%"
 },
 {
-  name:"MasLoiteringk",
+  name:"Loitering",
   percent:"96%"
 },]

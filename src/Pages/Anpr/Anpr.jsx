@@ -55,7 +55,7 @@ export default function Anpr() {
           ))}
         </div>
 
-        <div className="anpr-buttons">
+        <div className="anpr-buttons bounceInDown">
           {analysisBtns.map((item) => (
             <button
               className={

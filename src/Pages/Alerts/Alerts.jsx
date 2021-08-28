@@ -46,7 +46,7 @@ export default function Alerts() {
           ))}
         </div>
 
-        <div className="al-buttons">
+        <div className="al-buttons bounceInDown">
           {analysisBtns.map((item) => (
             <button
               className={
