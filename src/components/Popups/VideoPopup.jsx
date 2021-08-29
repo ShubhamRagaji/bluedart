@@ -9,10 +9,9 @@ export default function VideoPopup(props) {
       <div className="video_popup">
         <div className="overlay" onClick={props.onClick} />
         <div className="vd-popup">
-          <video width="650vw" height="450vw" controls autoPlay>
-            <source src={props.videoName} />
-            Can't load the video.
-          </video>
+          <img width="650vw" height="450vw" src={props.videoName} alt="Can't load the video."/>
+            {/* <source  />
+            Can't load the video. */}
         </div>
       </div>
     </div>

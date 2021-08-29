@@ -20,8 +20,7 @@ export default function Anpr() {
     "Entry  Date & Time",
     "Exit  Date & Time",
     "Total Duration",
-    "Media",
-    
+    "Media"
   ];
 
   const data = anpr_data;
