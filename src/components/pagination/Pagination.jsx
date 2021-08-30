@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./pagination.scss";
 import arrow from "./arrow.png";
 import arrow2 from "./arrow2.png";
+
 class Pagination extends Component {
   state = {};
 

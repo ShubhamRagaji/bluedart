@@ -7,10 +7,10 @@
     padding-bottom: 2vw;
 
     .dashboard {
-      padding-left: 7vw;
+      padding-left: 10vw;
       padding-top: 5vw;
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .Graphs {
@@ -20,7 +20,6 @@
       font-size: 1vw;
       position: relative;
       padding-left: 7vw;
-      z-index: -1;
 
       .barGraph {
         width: 36%;

@@ -19,8 +19,10 @@ export default function Anpr() {
     "Vehicle Number",
     "Entry  Date & Time",
     "Exit  Date & Time",
+    "Vehicle Type",
+    "Direction",
     "Total Duration",
-    "Media"
+    "Media",
   ];
 
   const data = anpr_data;
@@ -28,7 +30,6 @@ export default function Anpr() {
 
   //Pagination
   const dataPerPage = 10;
-  // const totalPages = Math.ceil(data.length / dataPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const pagination = (type) => {
@@ -62,31 +63,36 @@ export default function Anpr() {
                 setCurrentPage(1);
                 if (site === "Main Gate") {
                   filteredData();
-                } else {
+                } else if (site === "All Reports") {
                   setdataToDisplay(data);
+                } else {
+                  setdataToDisplay(null);
                 }
               }}
             />
           ))}
         </div>
+        {dataToDisplay ? (
+          <div className="anpr-table">
+            <Table
+              columnNames={columnNames}
+              data={dataToDisplay.slice(
+                currentPage * dataPerPage - dataPerPage,
+                currentPage * dataPerPage
+              )}
+              offset={currentPage * dataPerPage - dataPerPage}
+            ></Table>
 
-        <div className="anpr-table">
-          <Table
-            columnNames={columnNames}
-            data={dataToDisplay.slice(
-              currentPage * dataPerPage - dataPerPage,
-              currentPage * dataPerPage
-            )}
-            offset={currentPage * dataPerPage - dataPerPage}
-          ></Table>
-
-          <Pagination
-            currentPage={currentPage}
-            lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
-            nextPage={() => pagination("increment")}
-            prevPage={() => pagination("decrement")}
-          />
-        </div>
+            <Pagination
+              currentPage={currentPage}
+              lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
+              nextPage={() => pagination("increment")}
+              prevPage={() => pagination("decrement")}
+            />
+          </div>
+        ) : (
+          <p className="noData">No Data to display</p>
+        )}
       </div>
     </div>
   );

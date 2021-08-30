@@ -34,7 +34,7 @@ export default function Table(props) {
                           return <td><img
                                       src={props.data[index][rowData]}
                                       alt=""
-                                      onClick={() => setVideo(props.data[index].img_url)}
+                                      onClick={() => setImage(props.data[index].img_url)}
                                   /></td>
                         }
                         return <td>{props.data[index][rowData]}</td>

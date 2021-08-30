@@ -9,7 +9,7 @@ export default function DashboardCard(props) {
       <div className="count">
         <img className="card_icon" src={props.img} alt="icon" />
         <div className="totalCount">
-          <p className="amount">Total Amount</p>
+          <p className="amount">{props.total}</p>
           <p>{props.count}</p>
         </div>
       </div>

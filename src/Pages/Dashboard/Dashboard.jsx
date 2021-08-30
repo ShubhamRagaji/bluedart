@@ -3,7 +3,6 @@ import DashboardCard from "../../components/DashboardCards/DashboardCard";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import "./dashboard.scss";
-// import { progressBar } from "../../data";
 import { dashboard_card_details, bar_graph_data, doughnut_graph_data, horizontal_graph_data, crazy_graph_data, progressBar } from "../../dummy_data/dashboard";
 import { Bar, Doughnut } from "react-chartjs-2";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
@@ -77,6 +76,7 @@ export default function Dashboard() {
 				card_name={detail.card_name}
 				count={detail.count}
 				img={detail.img}
+				total={detail.name}
 				/>
 			))}
 			</div>
@@ -112,6 +112,10 @@ export default function Dashboard() {
 					id={"bar-" + index}
 				/>
 				))}
+			</div>
+
+			<div className="info">
+
 			</div>
 			</div>
 		</div>

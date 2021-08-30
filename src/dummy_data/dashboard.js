@@ -1,40 +1,62 @@
 import vehicle from "../components/Images/icons/van.png";
 import loading from "../components/Images/icons/loading.png";
 import unloading from "../components/Images/icons/unloading.png";
-import delivery from "../components/Images/icons/delivery.png";
 import camera from "../components/Images/icons/anpr.png";
+import np from "../components/Images/icons/np.png";
+import vehicle1 from "../components/Images/icons/vehicle.png";
+import pallete from "../components/Images/icons/pallete.png";
+import forklift from "../components/Images/icons/fork.jpg";
 
 export const dashboard_card_details = [
   {
     card_name: "Vehicle Counter",
     count: "62",
+     name:"Total Count",
     img: vehicle,
   },
   {
     card_name: "Loding Vehicle Counter",
     count: "420",
+     name:"Total Count",
     img: loading,
   },
   {
     card_name: "Unloading Vehicle Counter",
     count: "164",
+     name:"Total Count",
     img: unloading,
   },
   {
     card_name: "Number Plate Recognized",
     count: "565",
-    img: vehicle,
+     name:"Total Count",
+    img: np,
   },
   {
     card_name: "Avg Vehicle Per Hour",
     count: "9",
-    img: delivery,
+     name:"Total Count",
+    img: vehicle1,
   },
   {
     card_name: "Total Cameras Connected",
     count: "658",
+     name:"Total Count",
     img: camera,
   },
+  {
+    card_name: "Average Pallete Time",
+    count: "1hr 60min",
+     name:"Total Time",
+    img: pallete,
+  },
+  {
+    card_name: "Average Forklift Time",
+    count: "658",
+     name:"Total Time",
+    img: forklift,
+  },
+
 ];
 
 export const bar_graph_data = {
@@ -79,7 +101,11 @@ export const horizontal_graph_data = {
       label: "horizontal graph",
       data: [12, 19, 3, 5, 2, 3],
 
-      backgroundColor: ["rgba(255, 206, 86, 0.8)", "rgba(216,43,35,0.8)", "rgba(0,0,139,0.76)"],
+      backgroundColor: [
+        "rgba(255, 206, 86, 0.8)",
+        "rgba(216,43,35,0.8)",
+        "rgba(0,0,139,0.76)",
+      ],
       borderColor: [
         "rgba(255, 99, 132, 1)",
         "rgba(54, 162, 235, 1)",
