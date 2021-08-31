@@ -11,31 +11,16 @@
       display: flex;
     }
 
-    .anpr-buttons {
-      display: flex;
-      margin: 1vw 0;
-
-      .businessSecuritybtn {
-        background: #52575d;
-        padding: 0.6vw 1vw;
-        color: white;
-        border-radius: 0.4vw;
-        cursor: pointer;
-        font-size: 1vw;
-        margin-right: 2vw;
-        box-shadow: 3px 3px 8px grey;
-      }
-
-      .activeAnalysis {
-        background: #d82b23;
-      }
-    }
     .noData {
       height: 70vh;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 1.6vw;
+    }
+
+    .anpr-pagination {
+      margin-top: 3.8vw;
     }
   }
 }

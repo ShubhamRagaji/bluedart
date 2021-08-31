@@ -83,12 +83,14 @@ export default function Anpr() {
               offset={currentPage * dataPerPage - dataPerPage}
             ></Table>
 
-            <Pagination
-              currentPage={currentPage}
-              lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
-              nextPage={() => pagination("increment")}
-              prevPage={() => pagination("decrement")}
-            />
+            <div className="anpr-pagination">
+              <Pagination
+                currentPage={currentPage}
+                lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
+                nextPage={() => pagination("increment")}
+                prevPage={() => pagination("decrement")}
+              />
+            </div>
           </div>
         ) : (
           <p className="noData">No Data to display</p>

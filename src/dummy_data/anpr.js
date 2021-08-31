@@ -1,6 +1,3 @@
-import mp4 from "../components/Images/icons/mp4.png";
-import video1 from "../components/Videos/video1.mp4";
-import video2 from "../components/Videos/video2.mp4";
 import alert_png from "../components/Images/icons/jpg.png";
 
 function importAll(r) {

@@ -10,31 +10,31 @@ import forklift from "../components/Images/icons/fork.jpg";
 export const dashboard_card_details = [
   {
     card_name: "Vehicle Counter",
-    count: "62",
+    count: "43",
      name:"Total Count",
     img: vehicle,
   },
   {
     card_name: "Loding Vehicle Counter",
-    count: "420",
+    count: "27",
      name:"Total Count",
     img: loading,
   },
   {
     card_name: "Unloading Vehicle Counter",
-    count: "164",
+    count: "16",
      name:"Total Count",
     img: unloading,
   },
   {
     card_name: "Number Plate Recognized",
-    count: "565",
+    count: "18",
      name:"Total Count",
     img: np,
   },
   {
     card_name: "Avg Vehicle Per Hour",
-    count: "9",
+    count: "2",
      name:"Total Count",
     img: vehicle1,
   },
@@ -46,13 +46,13 @@ export const dashboard_card_details = [
   },
   {
     card_name: "Average Pallete Time",
-    count: "1hr 60min",
+    count: "1hr 43min",
      name:"Total Time",
     img: pallete,
   },
   {
     card_name: "Average Forklift Time",
-    count: "658",
+    count: "1hr 14min",
      name:"Total Time",
     img: forklift,
   },
@@ -99,15 +99,15 @@ export const horizontal_graph_data = {
   datasets: [
     {
       label: "horizontal graph",
-      data: [12, 19, 3, 5, 2, 3],
+      data: [0, 11, 12],
 
       backgroundColor: [
-        "rgba(255, 206, 86, 0.8)",
+        "rgba(0, 0, 0, 0)",
         "rgba(216,43,35,0.8)",
         "rgba(0,0,139,0.76)",
       ],
       borderColor: [
-        "rgba(255, 99, 132, 1)",
+        "rgba(0, 0, 0, 0)",
         "rgba(54, 162, 235, 1)",
         "rgba(255, 206, 86, 1)",
       ],
@@ -120,11 +120,9 @@ const rand = () => Math.floor(Math.random() * 255);
 
 export const crazy_graph_data = {
   labels: [
-    "16-08-2021",
-    "17-08-2021",
-    "18-08-2021",
-    "19-08-2021",
-    "20-08-2021",
+    "11-08-2021",
+    "15-08-2021",
+    "24-08-2021"
   ],
   datasets: [
     {
@@ -133,21 +131,21 @@ export const crazy_graph_data = {
       borderColor: `rgb(${rand()}, ${rand()}, ${rand()})`,
       borderWidth: 2,
       fill: false,
-      data: [15, 17, 24, 18, 16],
+      data: [22.5, 30, 27.5],
     },
     {
       type: "bar",
-      label: "Avg Loading Time",
+      label: "Avg Loading Time in Min",
       backgroundColor: "rgba(216,43,35,0.8)",
-      data: [17, 19, 23, 20, 14],
+      data: [35, 25, 40],
       borderColor: "white",
       borderWidth: 2,
     },
     {
       type: "bar",
-      label: "Avg Unloading Time",
+      label: "Avg Unloading Time in Min",
       backgroundColor: "rgba(0,0,139,0.76)",
-      data: [13, 15, 25, 16, 17],
+      data: [10, 35, 15],   
     },
   ],
 };
@@ -155,7 +153,7 @@ export const crazy_graph_data = {
 export const progressBar = [
   {
     name: "Mask",
-    percent: "65%",
+    percent: "0%",
   },
   {
     name: "Palette ",
@@ -164,6 +162,6 @@ export const progressBar = [
 
   {
     name: "Forklift",
-    percent: "26%",
+    percent: "84%",
   },
 ];

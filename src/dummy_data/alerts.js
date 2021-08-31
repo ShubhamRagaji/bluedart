@@ -1,11 +1,20 @@
 import alert_png from "../components/Images/icons/jpg.png";
-import one from '../components/Images/1.png'
-import two from '../components/Images/2.png'
-import three from '../components/Images/3.png'
-import four from '../components/Images/4.png'
-import five from '../components/Images/5.png'
-import six from '../components/Images/6.png'
-import seven from '../components/Images/7.png'
+import one from "../components/Images/Alerts/1.png";
+import two from "../components/Images/Alerts/2.png";
+import three from "../components/Images/Alerts/3.png";
+import four from "../components/Images/Alerts/4.png";
+import five from "../components/Images/Alerts/5.png";
+import six from "../components/Images/Alerts/6.png";
+import seven from "../components/Images/Alerts/7.png";
+import fk_11 from "../components/Images/Alerts/11-fk.png";
+import pl_11 from "../components/Images/Alerts/11-pl.png";
+import pl_13 from "../components/Images/Alerts/13_pl.png";
+import fk_15 from "../components/Images/Alerts/15_fk.png";
+import pl_15 from "../components/Images/Alerts/15_pl.png";
+import fk_24 from "../components/Images/Alerts/24_fk.png";
+import fk1_24 from "../components/Images/Alerts/24_fk1.png";
+import pl_24 from "../components/Images/Alerts/24_pl.png";
+import pl1_24 from "../components/Images/Alerts/24_pl1.png";
 
 export const alerts = [
   {
@@ -14,9 +23,9 @@ export const alerts = [
     camera_location: "Baygate2",
     camera_name: "Cam_9",
     alert: "Forklift Detected",
-    timestamp: "23-08-2021  07:25:17",
+    timestamp: "11-08-2021 10:19:13",
     img: alert_png,
-    img_url: one
+    img_url: fk_11,
   },
   {
     priority: "High",
@@ -24,9 +33,19 @@ export const alerts = [
     camera_location: "Baygate2",
     camera_name: "Cam_9",
     alert: "Pallet Detected",
-    timestamp: "23-08-2021  07:25:17",
+    timestamp: "11-08-2021 10:19:27",
     img: alert_png,
-    img_url: two
+    img_url: pl_11,
+  },
+  {
+    priority: "High",
+    location: "Mumbai",
+    camera_location: "Baygate2",
+    camera_name: "Cam_9",
+    alert: "Pallet Detected",
+    timestamp: "13-08-2021 03:42:45",
+    img: alert_png,
+    img_url: pl_13,
   },
   {
     priority: "High",
@@ -34,9 +53,9 @@ export const alerts = [
     camera_location: "Baygate2",
     camera_name: "Cam_9",
     alert: "Forklift Detected",
-    timestamp: "23-08-2021  07:25:17",
+    timestamp: "15-08-2021 11:51:46",
     img: alert_png,
-    img_url: three
+    img_url: fk_15,
   },
   {
     priority: "High",
@@ -44,9 +63,31 @@ export const alerts = [
     camera_location: "Baygate2",
     camera_name: "Cam_9",
     alert: "Pallet Detected",
-    timestamp: "23-08-2021  07:25:17",
+    timestamp: "15-08-2021 12:09:19",
     img: alert_png,
-    img_url: four
+    img_url: pl_15,
+  },
+
+  // ------------------------------------------------------------------------------
+  {
+    priority: "High",
+    location: "Mumbai",
+    camera_location: "Baygate2",
+    camera_name: "Cam_9",
+    alert: "Pallet Detected",
+    timestamp: "23-08-2021  06:34:09",
+    img: alert_png,
+    img_url: two,
+  },
+  {
+    priority: "High",
+    location: "Mumbai",
+    camera_location: "Baygate2",
+    camera_name: "Cam_9",
+    alert: "Pallet Detected",
+    timestamp: "23-08-2021  06:37:49",
+    img: alert_png,
+    img_url: five,
   },
   {
     priority: "High",
@@ -54,9 +95,9 @@ export const alerts = [
     camera_location: "Baygate2",
     camera_name: "Cam_9",
     alert: "Forklift Detected",
-    timestamp: "23-08-2021  07:25:17",
+    timestamp: "23-08-2021  06:38:28",
     img: alert_png,
-    img_url: five
+    img_url: one,
   },
   {
     priority: "High",
@@ -64,9 +105,9 @@ export const alerts = [
     camera_location: "Baygate2",
     camera_name: "Cam_9",
     alert: "Pallet Detected",
-    timestamp: "23-08-2021  07:25:17",
+    timestamp: "23-08-2021  07:13:00",
     img: alert_png,
-    img_url: six
+    img_url: six,
   },
   {
     priority: "High",
@@ -74,9 +115,9 @@ export const alerts = [
     camera_location: "Baygate2",
     camera_name: "Cam_9",
     alert: "Forklift Detected",
-    timestamp: "23-08-2021  07:25:17",
+    timestamp: "23-08-2021  07:14:24",
     img: alert_png,
-    img_url: seven
+    img_url: four,
   },
   {
     priority: "High",
@@ -86,7 +127,7 @@ export const alerts = [
     alert: "Pallet Detected",
     timestamp: "23-08-2021  07:25:17",
     img: alert_png,
-    img_url: one
+    img_url: two,
   },
   {
     priority: "High",
@@ -96,7 +137,7 @@ export const alerts = [
     alert: "Pallet Detected",
     timestamp: "23-08-2021  07:25:17",
     img: alert_png,
-    img_url: two
+    img_url: three,
   },
   {
     priority: "High",
@@ -106,7 +147,7 @@ export const alerts = [
     alert: "Forklift Detected",
     timestamp: "23-08-2021  06:40:17",
     img: alert_png,
-    img_url: three
+    img_url: one,
   },
   {
     priority: "High",
@@ -116,7 +157,7 @@ export const alerts = [
     alert: "Forklift Detected",
     timestamp: "23-08-2021  06:40:17",
     img: alert_png,
-    img_url: four
+    img_url: one,
   },
   {
     priority: "High",
@@ -126,7 +167,7 @@ export const alerts = [
     alert: "Forklift Detected",
     timestamp: "23-08-2021  06:40:17",
     img: alert_png,
-    img_url: five
+    img_url: one,
   },
   {
     priority: "High",
@@ -136,7 +177,7 @@ export const alerts = [
     alert: "Forklift Detected",
     timestamp: "23-08-2021  06:40:17",
     img: alert_png,
-    img_url: six
+    img_url: one,
   },
   {
     priority: "High",
@@ -146,9 +187,52 @@ export const alerts = [
     alert: "Pallet Detected",
     timestamp: "23-08-2021  06:40:17",
     img: alert_png,
-    img_url: seven
+    img_url: seven,
   },
-]
+
+  // ------------------------------------------------------------------------------
+
+  {
+    priority: "High",
+    location: "Mumbai",
+    camera_location: "Baygate2",
+    camera_name: "Cam_9",
+    alert: "Forklift Detected",
+    timestamp: "24-08-2021 9:01:53",
+    img: alert_png,
+    img_url: fk_24,
+  },
+  {
+    priority: "High",
+    location: "Mumbai",
+    camera_location: "Baygate2",
+    camera_name: "Cam_9",
+    alert: "Pallet Detected",
+    timestamp: "24-08-2021  09:30:17",
+    img: alert_png,
+    img_url: pl_24,
+  },
+  {
+    priority: "High",
+    location: "Mumbai",
+    camera_location: "Baygate2",
+    camera_name: "Cam_9",
+    alert: "Forklift Detected",
+    timestamp: "24-08-2021  10:08:17",
+    img: alert_png,
+    img_url: fk1_24,
+  },
+  {
+    priority: "High",
+    location: "Mumbai",
+    camera_location: "Baygate2",
+    camera_name: "Cam_9",
+    alert: "Pallet Detected",
+    timestamp: "24-08-2021  10:08:17",
+    img: alert_png,
+    img_url: pl1_24,
+  },
+];
 
 export const sec_analysis = [
   {
@@ -164,7 +248,7 @@ export const sec_analysis = [
     alerts_detected: "false",
     accuarcy: "100",
     img: alert_png,
-    img_url: alert_png
+    img_url: alert_png,
   },
   {
     priority: "High",
@@ -347,5 +431,5 @@ export const sec_analysis = [
     alerts_detected: "false",
     accuarcy: "100",
     img: alert_png,
-  }
+  },
 ];
