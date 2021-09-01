@@ -3,6 +3,12 @@
   height: 100vh;
   overflow-x: hidden;
 
+  .information {
+    width: 1.8vw;
+    opacity: 64%;
+    cursor: pointer;
+  }
+
   .dash {
     padding-bottom: 2vw;
 
@@ -21,9 +27,20 @@
       position: relative;
       padding-left: 7vw;
 
+      .ttp {
+        width: 2vw;
+      }
+
       .barGraph {
         width: 36%;
         margin-bottom: 1vw;
+        position: relative;
+
+        .vehInOut {
+          position: absolute;
+          top: 2.8%;
+          right: 30%;
+        }
 
         canvas {
           display: block;
@@ -35,6 +52,13 @@
 
       .DoughnutGraph {
         width: 18%;
+        position: relative;
+
+        .activeInactiveCam {
+          position: absolute;
+          top: 2.8%;
+          right: 2%;
+        }
 
         canvas {
           box-shadow: 3px 3px 8px grey;
@@ -45,15 +69,29 @@
       .HorizontalGraph {
         width: 36%;
         margin-right: 3vw;
+        position: relative;
 
         canvas {
           box-shadow: 3px 3px 8px grey;
           padding: 1vw;
         }
+
+        .totalAlerts {
+          position: absolute;
+          top: 2.8%;
+          right: 2%;
+        }
       }
 
       .CrazyGraph {
         width: 57.6%;
+        position: relative;
+
+        .actAnalyzer {
+          position: absolute;
+          top: 2.8%;
+          right: 2%;
+        }
 
         canvas {
           box-shadow: 3px 3px 8px grey;
@@ -67,6 +105,13 @@
         padding: 1vw;
         margin-right: 2vw;
         margin-top: 3.4vw;
+        position: relative;
+
+        .progressBar {
+          position: absolute;
+          top: -10.2%;
+          right: 2%;
+        }
 
         .rangeBar_Header {
           font-size: 1vw;

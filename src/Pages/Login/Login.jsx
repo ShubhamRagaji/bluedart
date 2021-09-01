@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./login.scss";
 import { Link, useHistory } from "react-router-dom";
 import username from "../../components/Images/username-icon.png";
@@ -12,8 +12,11 @@ export default function RoleLogin() {
 
   const [uname, setuname] = useState();
   const [password, setpassword] = useState();
+  const [accessKey, setaccessKey] = useState();
+  const [data, setData] = useState();
 
   const history = useHistory();
+
   const loginCredentials = () => {
     if (uname === "admin" && password === "admin@123") {
       history.push("/dashboard");
@@ -21,6 +24,22 @@ export default function RoleLogin() {
       alert("Wrong Username or Password");
     }
   };
+
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json", username: uname, password: password},
+  
+  };
+
+  // const loginData = () => {
+  //   fetch("http://182.70.113.98:81/api/v1/users/docs", requestOptions)
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     console.log(data)
+  //   });
+    
+  // }
+
   return (
     <div className="Role-Login">
       <div className="rl-login">
@@ -72,20 +91,30 @@ export default function RoleLogin() {
             )}
           </div>
 
+          {/* <div className="access-key">
+            <input
+              type="text"
+              id="accessKey"
+              name="accessKey"
+              value={accessKey}
+              placeholder="Enter Access Key"
+              onChange={(e) => setaccessKey(e.target.value)}
+            />
+          </div> */}
+
           <Link to="" className="forgot-password-link">
             Forgot Password
           </Link>
 
-    
-            <button
-              className="roleLogin-button"
-              onClick={() => {
-                loginCredentials();
-              }}
-            >
-              Login
-            </button>
-     
+          <button
+            className="roleLogin-button"
+            onClick={() => {
+              loginCredentials();
+              // loginData()
+            }}
+          >
+            Login
+          </button>
         </div>
       </div>
     </div>

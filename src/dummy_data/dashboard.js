@@ -13,50 +13,57 @@ export const dashboard_card_details = [
     count: "43",
      name:"Total Count",
     img: vehicle,
+    content:"Total count of Loading & Unloading vehicles from the collected videos of the DTDC warehouse"
   },
   {
     card_name: "Loding Vehicle Counter",
     count: "27",
      name:"Total Count",
     img: loading,
+    content:"Total count of Loading vehicles from the collected videos of the DTDC warehouse"
   },
   {
     card_name: "Unloading Vehicle Counter",
     count: "16",
      name:"Total Count",
     img: unloading,
+    content:"Total count of Unloading vehicles from the collected videos of the DTDC warehouse"
   },
   {
     card_name: "Number Plate Recognized",
     count: "18",
      name:"Total Count",
     img: np,
+    content:"Total count of correctly recognized vehicle number plates using ANPR algorithm"
   },
   {
     card_name: "Avg Vehicle Per Hour",
     count: "2",
      name:"Total Count",
     img: vehicle1,
+    content:"Average count of vehicles visiting per hour"
   },
   {
     card_name: "Total Cameras Connected",
     count: "658",
      name:"Total Count",
     img: camera,
+    content:"Total count of active cameras at DTDC warehouse"
   },
   {
     card_name: "Average Pallete Time",
     count: "1hr 43min",
      name:"Total Time",
     img: pallete,
+    content:"Average time of Palletes used for Loading and Unloading activity from the collected videos at DTDC warehouse"
   },
   {
     card_name: "Average Forklift Time",
     count: "1hr 14min",
      name:"Total Time",
     img: forklift,
+    content:"Average time of Forklift usage for Loading and Unloading activity from the collected videos at DTDC warehouse"
   },
-
 ];
 
 export const bar_graph_data = {
