@@ -3,6 +3,86 @@
   height: 100vh;
   overflow-x: hidden;
 
+  .filters {
+    display: flex;
+    margin: 6vw 4vw -3.6vw 8vw;
+    //Dropdown
+
+    :root {
+      --select-border: #777;
+      --select-focus: blue;
+      --select-arrow: var(--select-border);
+    }
+
+    select {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      padding-left: 1vw;
+      margin: 0;
+      width: 110%;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: inherit;
+      line-height: inherit;
+      z-index: 1;
+      outline: none;
+      margin-left: -1vw;
+      z-index: 1;
+      outline: none;
+    }
+
+    .select {
+      display: grid;
+      grid-template-areas: "select";
+      align-items: center;
+      position: relative;
+      border: 1px solid rgb(118, 118, 118);
+      border-radius: 0.25em;
+      padding: 1vw;
+      font-size: 1vw;
+      cursor: pointer;
+      line-height: 1.1;
+      color: rgb(118, 118, 118);
+      box-shadow: 2px 2px 6px #767676;
+      background-color: #fff;
+      background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+      width: 20vw;
+      margin-right: 2vw;
+
+      select,
+      &::after {
+        grid-area: select;
+      }
+
+      // Custom arrow
+      &:not(.select--multiple)::after {
+        content: "";
+        justify-self: end;
+        width: 0.8em;
+        height: 0.5em;
+        background-color: blue;
+        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+      }
+    }
+    .filterbutton {
+      margin-right: 2vw;
+      padding: 0vw 4vw;
+      font-size: 0.92vw;
+      border-radius: 0.4vw;
+      cursor: pointer;
+      background: #a76a6a;
+      color: white;
+      transition: 0.4s;
+    }
+
+    .filterbutton:hover {
+      background: #d82b23;
+      opacity: 80%;
+    }
+  }
+
   .information {
     width: 1.8vw;
     opacity: 64%;

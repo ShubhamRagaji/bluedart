@@ -25,17 +25,17 @@ export default function RoleLogin() {
     }
   };
 
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json", username: uname, password: password},
+  // const requestOptions = {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json", username: uname, password: password},
   
-  };
+  // };
 
   // const loginData = () => {
-  //   fetch("http://182.70.113.98:81/api/v1/users/docs", requestOptions)
+  //   fetch("http://marketplace.diycam.com/api/v1/users/login", requestOptions)
   //   .then((response) => response.json())
-  //   .then((data) => {
-  //     console.log(data)
+  //   .then((items) => {
+  //     console.log(items)
   //   });
     
   // }

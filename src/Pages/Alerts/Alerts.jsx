@@ -6,17 +6,19 @@ import Pagination from "../../components/pagination/Pagination";
 import Table from "../../components/Tables/Table";
 import { alerts, sec_analysis, actDuration } from "../../dummy_data/alerts";
 import "./alerts.scss";
-import ActivityDuration from '../../components/ActivityDuration/ActivityDuration'
+import ActivityDuration from "../../components/ActivityDuration/ActivityDuration";
 
 export default function Alerts() {
   const [activeBayGate, setactiveBayGate] = useState("All Alerts");
   const [activeAnalysis, setactiveAnalysis] = useState("Business Analysis");
+  const [activeSecAnalysisBtn, setactiveSecAnalysisBtn] = useState("All");
   const [activeFilteredButton, setactiveFilteredButton] = useState("All");
   const [activityDuration, setactivityDuration] = useState(false);
 
   const sites = ["All Alerts", "BayGate 2", "BayGate 6", "BayGate 9"];
   const analysisBtns = ["Business Analysis", "Security Analysis"];
   const filterButtons = ["All", "Forklift", "Pallete", "Activity Duration"];
+  const security_filterButtons = ["All", "Box Throwing", "Mishandling"];
 
   const td = [
     "Sr. No",
@@ -31,18 +33,12 @@ export default function Alerts() {
 
   const security_td = [
     "Sr. No",
-    "Priority",
-    "Location",
+    "Time",
+    "Date",
+    "Warehouse Location",
     "Camera Location",
     "Camera Name",
-    "Alert",
-    "Date & Time",
-    "Assigned To",
-    "Status",
-    "Camera Tampering",
-    "Alerts Detected",
-    "Accuracy",
-    "Media",
+    "Location",
   ];
 
   const data = alerts;
@@ -75,7 +71,23 @@ export default function Alerts() {
             <BayGatesButtons
               bg_name={site}
               isActive={site === activeBayGate}
-              onClick={() => setactiveBayGate(site)}
+              onClick={() => {
+                setactiveBayGate(site);
+              if(activeSecAnalysisBtn === "Business Analysis"){
+                if (site === "All Alerts" || site === "BayGate 2") {
+                  setdataToDisplay(data);
+                  setactivityDuration(false);
+                  setactiveFilteredButton("All");
+                } else if (site === "BayGate 6" || site === "BayGate 9") {
+                  setactiveFilteredButton("All");
+                  setdataToDisplay(data);
+                }
+              }else if(activeSecAnalysisBtn === "Security Analysis"){
+                setdataToDisplay(security_data);
+                // setactiveBayGate(site === "BayGate 6")
+              }
+            
+            }}
             />
           ))}
         </div>
@@ -89,8 +101,15 @@ export default function Alerts() {
                   : "businessSecuritybtn"
               }
               onClick={() => {
-                setactiveAnalysis(item);
-                setactiveBayGate("All Alerts");
+                if (item === "Business Analysis") {
+                  setactiveAnalysis(item);
+                  setactiveBayGate("All Alerts");
+                  setdataToDisplay(data);
+                } else if (item === "Security Analysis") {
+                  setactiveAnalysis(item);
+                  setactiveBayGate("All Alerts");
+                  setdataToDisplay(security_data);
+                }
               }}
             >
               {item}
@@ -98,7 +117,7 @@ export default function Alerts() {
           ))}
         </div>
 
-        {activeAnalysis === "Business Analysis" && (
+        {activeAnalysis === "Business Analysis" ? (
           <div className="bussinessAnalysis-filterButtons bounceInDown">
             {filterButtons.map((filterButton) => (
               <button
@@ -111,19 +130,31 @@ export default function Alerts() {
                   setactiveFilteredButton(filterButton);
                   if (filterButton === "All") {
                     setdataToDisplay(data);
+                    setactivityDuration(false);
                   } else if (filterButton === "Forklift") {
                     let forklift_data = data.filter(
                       (item) => item.alert === "Forklift Detected"
                     );
+                    setactivityDuration(false);
+                    setCurrentPage(1)
+
                     setdataToDisplay(forklift_data);
                   } else if (filterButton === "Pallete") {
                     let pallete_data = data.filter(
                       (item) => item.alert === "Pallete Detected"
                     );
+                    setactivityDuration(false);
                     setdataToDisplay(pallete_data);
                   } else if (filterButton === "Activity Duration") {
-                    // setdataToDisplay("");  
-                    setactivityDuration(true);
+                    if (
+                      activeBayGate === "All Alerts" ||
+                      activeBayGate === "BayGate 2"
+                    ) {
+                      setdataToDisplay("");
+                      setactivityDuration(true);
+                    } else {
+                      setdataToDisplay(data);
+                    }
                   }
                 }}
               >
@@ -131,13 +162,45 @@ export default function Alerts() {
               </button>
             ))}
           </div>
+        ) : (
+          <div className="security_btns">
+            {security_filterButtons.map((security) => (
+              <button
+                className={
+                  activeSecAnalysisBtn === security
+                    ? "securityAnalysis-filterButtons activeSecBtn bounceInDown"
+                    : "securityAnalysis-filterButtons bounceInDown"
+                }
+                onClick={() => {
+                  setactiveSecAnalysisBtn(security);
+
+                  if (security === "All") {
+                    setdataToDisplay(security_data);
+                  } else if (security === "Box Throwing") {
+                    let sec_filteredData = security_data.filter(
+                      (item) => item.war_location === "Box Throwing"
+                    );
+                    setdataToDisplay(sec_filteredData);
+                    setCurrentPage(1)
+                  } else if (security === "Mishandling") {
+                    let sec_filteredData1 = security_data.filter(
+                      (item) => item.war_location === "Mishandling"
+                    );
+                    setdataToDisplay(sec_filteredData1);
+                  }
+                }}
+              >
+                {security}
+              </button>
+            ))}
+          </div>
         )}
 
-        {/* {dataToDisplay && (
+        {dataToDisplay && (
           <div>
             {activeBayGate === "All Alerts" || activeBayGate === "BayGate 2" ? (
               <div>
-                {activeAnalysis === "Business Analysis" ? (
+                {activeAnalysis && "Business Analysis" ? (
                   <div className="alerts-table">
                     <Table
                       columnNames={td}
@@ -168,26 +231,23 @@ export default function Alerts() {
 
                     <Pagination
                       currentPage={currentPage}
-                      lastPage={sec_analysis_totalPages}
+                      lastPage={Math.ceil(security_data.length / dataPerPage)}
                       nextPage={() => pagination("increment")}
                       prevPage={() => pagination("decrement")}
                     />
                   </div>
                 )}
               </div>
-            ) : 
-            (
+            ) : (
               <p className="noData">No Data to Display</p>
-            )
-            } 
+            )}
           </div>
-        )} */}
+        )}
 
         {activityDuration && (
           <div className="activityDuration">
             {act_Duration.map((activity) => (
               <ActivityDuration
-                srNo={activity.srNo}
                 date={activity.date}
                 type={activity.type}
                 startTime={activity.startTime}
@@ -195,6 +255,13 @@ export default function Alerts() {
                 worker={activity.worker}
                 location={activity.location}
                 actTime={activity.actTime}
+                actLocation={activity.actLocation}
+                peopleonDeck={activity.peopleonDeck}
+                vehType={activity.vehType}
+                pl_fk_violation={activity.pl_fk_violation}
+                mask={activity.mask}
+                soc_distancing={activity.soc_distancing}
+                mishandling={activity.mishandling}
               />
             ))}
           </div>

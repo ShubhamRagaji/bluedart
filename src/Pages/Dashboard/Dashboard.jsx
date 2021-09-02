@@ -77,6 +77,18 @@ export default function Dashboard() {
     <div className="Dashboard">
       <Header heading="Dashboard" />
       <Menu />
+      <div className="filters">
+        <div className="select">
+          <select name="slct" id="slct">
+            <option value={""} selected disabled>
+              Choose Your Location
+            </option>
+            <option value="Mumbai">Mumbai</option>
+          </select>
+        </div>
+        <button className="filterbutton">Weekly Reports</button>
+        <button className="filterbutton">Monthly Reports</button>
+      </div>
       <div className="dash">
         <div className="dashboard">
           {card.map((detail) => (
@@ -91,12 +103,6 @@ export default function Dashboard() {
         </div>
 
         <div className="Graphs">
-		{/* <ReactTooltip
-          place="right"
-          type="info"
-          effect="solid"
-		  className="ttp"
-        /> */}
           <div className="barGraph">
             <p>Vehicle In & Out</p>
             <Bar data={barGraphData} options={barGraphOptions} />
@@ -115,7 +121,7 @@ export default function Dashboard() {
               src={information}
               alt="information"
               className="information activeInactiveCam"
-			  data-tip="Total count of active and inactive cameras"
+              data-tip="Total count of active and inactive cameras"
             />
           </div>
           <div className="HorizontalGraph">

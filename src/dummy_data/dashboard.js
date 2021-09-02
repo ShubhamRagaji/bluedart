@@ -16,7 +16,7 @@ export const dashboard_card_details = [
     content:"Total count of Loading & Unloading vehicles from the collected videos of the DTDC warehouse"
   },
   {
-    card_name: "Loding Vehicle Counter",
+    card_name: "Loading Vehicle Counter",
     count: "27",
      name:"Total Count",
     img: loading,
