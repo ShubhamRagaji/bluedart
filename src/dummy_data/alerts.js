@@ -16,6 +16,26 @@ import fk1_24 from "../components/Images/Alerts/24_fk1.png";
 import pl_24 from "../components/Images/Alerts/24_pl.png";
 import pl1_24 from "../components/Images/Alerts/24_pl1.png";
 
+//Security Analysis Images
+import sec_1 from "../components/Images/Sec_analysis/Box_Throwing/1.png"
+import sec_2 from "../components/Images/Sec_analysis/Box_Throwing/2.png"
+import sec_3 from "../components/Images/Sec_analysis/Box_Throwing/3.png"
+import sec_4 from "../components/Images/Sec_analysis/Box_Throwing/4.png"
+import sec_5 from "../components/Images/Sec_analysis/Box_Throwing/5.png"
+import sec_6 from "../components/Images/Sec_analysis/Mishandling/mishandling_1.png"
+import sec_7 from "../components/Images/Sec_analysis/Mishandling/mishandling_2.png"
+import sec_8 from "../components/Images/Sec_analysis/Mishandling/mishandling_3.png"
+import sec_9 from "../components/Images/Sec_analysis/Mishandling/mishandling_4.png"
+import sec_10 from "../components/Images/Sec_analysis/Mishandling/mishandling_5.png"
+import sec_12 from "../components/Images/Sec_analysis/Mishandling/mishandling_7.png"
+import sec_13 from "../components/Images/Sec_analysis/Mishandling/mishandling_8.png"
+import sec_14 from "../components/Images/Sec_analysis/Mishandling/mishandling_9.png"
+import sec_15 from "../components/Images/Sec_analysis/Mishandling/mishandling_10.png"
+import sec_16 from "../components/Images/Sec_analysis/Mishandling/mishandling_11.png"
+import sec_17 from "../components/Images/Sec_analysis/Mishandling/mishandling_12.png"
+import sec_18 from "../components/Images/Sec_analysis/Mishandling/mishandling_13.png"
+import sec_19 from "../components/Images/Sec_analysis/Mishandling/mishandling_14.png"
+
 export const alerts = [
   {
     priority: "High",
@@ -307,148 +327,185 @@ export const actDuration = [
 
 export const sec_analysis = [
   {
-   time:"11:51:37",
-   date:"18/08/2021",
-   war_location:"Box Throwing",
-   camera_location:"Bay Gate 6",
-   camera_name:"CP IP Cam",
-   location:"Mumbai"
+    time: "11:51:37",
+    date: "18/08/2021",
+    war_location: "Box Throwing",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_1
   },
   {
-    time:"11:51:50",
-    date:"18/08/2021",
-    war_location:"Box Throwing",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:53:37",
-    date:"18/08/2021",
-    war_location:"Box Throwing",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:53:55",
-    date:"18/08/2021",
-    war_location:"Box Throwing",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:54:00",
-    date:"18/08/2021",
-    war_location:"Box Throwing",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:51:40",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:55:40",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:56:41",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:59:40",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:53:46",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:53:59",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:54:01",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:54:05",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:51:37",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:51:38",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:53:40",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:53;45",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
-   {
-    time:"11:56:16",
-    date:"18/08/2021",
-    war_location:"Mishandling",
-    camera_location:"Bay Gate 6",
-    camera_name:"CP IP Cam",
-    location:"Mumbai"
-   },
+    time: "11:51:40",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url: sec_6
+  },
+  {
+    time: "11:51:50",
+    date: "18/08/2021",
+    war_location: "Box Throwing",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_3
+  },
+  {
+    time: "11:53:37",
+    date: "18/08/2021",
+    war_location: "Box Throwing",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_4
+  },
+  {
+    time: "11:53:46",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url: sec_7
+  },
+  {
+    time: "11:53:55",
+    date: "18/08/2021",
+    war_location: "Box Throwing",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_2
+  },
+  {
+    time: "11:54:00",
+    date: "18/08/2021",
+    war_location: "Box Throwing",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_5
+  },
 
+  {
+    time: "11:55:40",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_8
+  },
+  {
+    time: "11:56:41",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_9
+  },
+  {
+    time: "11:59:40",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_10
+  },
+
+  {
+    time: "11:53:59",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_12
+  },
+  {
+    time: "11:54:01",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_13
+  },
+  {
+    time: "11:54:05",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_14
+  },
+  {
+    time: "11:51:37",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_15
+  },
+  {
+    time: "11:51:38",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_16
+  },
+  {
+    time: "11:53:40",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_17
+  },
+  {
+    time: "11:53:45",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_18
+  },
+  {
+    time: "11:56:16",
+    date: "18/08/2021",
+    war_location: "Mishandling",
+    camera_location: "Bay Gate 6",
+    camera_name: "CP IP Cam",
+    location: "Mumbai",
+    img: alert_png,
+    img_url:sec_19
+  },
 ];

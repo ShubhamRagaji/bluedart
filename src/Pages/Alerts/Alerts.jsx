@@ -50,7 +50,6 @@ export default function Alerts() {
 
   //Pagination
   const dataPerPage = 10;
-  const sec_analysis_totalPages = Math.ceil(security_data.length / dataPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const pagination = (type) => {
@@ -73,21 +72,18 @@ export default function Alerts() {
               isActive={site === activeBayGate}
               onClick={() => {
                 setactiveBayGate(site);
-              if(activeSecAnalysisBtn === "Business Analysis"){
+
                 if (site === "All Alerts" || site === "BayGate 2") {
                   setdataToDisplay(data);
                   setactivityDuration(false);
                   setactiveFilteredButton("All");
+                  setactiveSecAnalysisBtn("All");
                 } else if (site === "BayGate 6" || site === "BayGate 9") {
                   setactiveFilteredButton("All");
+                  setactiveSecAnalysisBtn("All");
                   setdataToDisplay(data);
                 }
-              }else if(activeSecAnalysisBtn === "Security Analysis"){
-                setdataToDisplay(security_data);
-                // setactiveBayGate(site === "BayGate 6")
-              }
-            
-            }}
+              }}
             />
           ))}
         </div>
@@ -109,6 +105,8 @@ export default function Alerts() {
                   setactiveAnalysis(item);
                   setactiveBayGate("All Alerts");
                   setdataToDisplay(security_data);
+                  setactiveBayGate("BayGate 6");
+                  setCurrentPage(1);
                 }
               }}
             >
@@ -136,7 +134,7 @@ export default function Alerts() {
                       (item) => item.alert === "Forklift Detected"
                     );
                     setactivityDuration(false);
-                    setCurrentPage(1)
+                    setCurrentPage(1);
 
                     setdataToDisplay(forklift_data);
                   } else if (filterButton === "Pallete") {
@@ -181,7 +179,7 @@ export default function Alerts() {
                       (item) => item.war_location === "Box Throwing"
                     );
                     setdataToDisplay(sec_filteredData);
-                    setCurrentPage(1)
+                    setCurrentPage(1);
                   } else if (security === "Mishandling") {
                     let sec_filteredData1 = security_data.filter(
                       (item) => item.war_location === "Mishandling"
@@ -198,48 +196,96 @@ export default function Alerts() {
 
         {dataToDisplay && (
           <div>
-            {activeBayGate === "All Alerts" || activeBayGate === "BayGate 2" ? (
+            {activeAnalysis === "Business Analysis" ? (
               <div>
-                {activeAnalysis && "Business Analysis" ? (
-                  <div className="alerts-table">
-                    <Table
-                      columnNames={td}
-                      data={dataToDisplay.slice(
-                        currentPage * dataPerPage - dataPerPage,
-                        currentPage * dataPerPage
-                      )}
-                      offset={currentPage * dataPerPage - dataPerPage}
-                    ></Table>
+                {activeBayGate === "All Alerts" ||
+                activeBayGate === "BayGate 2" ? (
+                  <div>
+                    {activeAnalysis === "Business Analysis" ? (
+                      <div className="alerts-table">
+                        <Table
+                          columnNames={td}
+                          data={dataToDisplay.slice(
+                            currentPage * dataPerPage - dataPerPage,
+                            currentPage * dataPerPage
+                          )}
+                          offset={currentPage * dataPerPage - dataPerPage}
+                        ></Table>
 
-                    <Pagination
-                      currentPage={currentPage}
-                      lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
-                      nextPage={() => pagination("increment")}
-                      prevPage={() => pagination("decrement")}
-                    />
+                        <Pagination
+                          currentPage={currentPage}
+                          lastPage={Math.ceil(
+                            dataToDisplay.length / dataPerPage
+                          )}
+                          nextPage={() => pagination("increment")}
+                          prevPage={() => pagination("decrement")}
+                        />
+                      </div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 ) : (
-                  <div className="alerts-table">
-                    <Table
-                      columnNames={security_td}
-                      data={security_data.slice(
-                        currentPage * dataPerPage - dataPerPage,
-                        currentPage * dataPerPage
-                      )}
-                      offset={currentPage * dataPerPage - dataPerPage}
-                    ></Table>
-
-                    <Pagination
-                      currentPage={currentPage}
-                      lastPage={Math.ceil(security_data.length / dataPerPage)}
-                      nextPage={() => pagination("increment")}
-                      prevPage={() => pagination("decrement")}
-                    />
-                  </div>
+                  <p className="noData">No Data to Display</p>
                 )}
               </div>
             ) : (
-              <p className="noData">No Data to Display</p>
+              // -------------------------------------------------------
+              <div>
+                {activeBayGate === "All Alerts" ||
+                activeBayGate === "BayGate 6" ? (
+                  <div>
+                    {
+                      activeAnalysis === "Security Analysis" ? (
+                        <div className="alerts-table">
+                          <Table
+                            columnNames={td}
+                            data={dataToDisplay.slice(
+                              currentPage * dataPerPage - dataPerPage,
+                              currentPage * dataPerPage
+                            )}
+                            offset={currentPage * dataPerPage - dataPerPage}
+                          ></Table>
+
+                          <Pagination
+                            currentPage={currentPage}
+                            lastPage={Math.ceil(
+                              dataToDisplay.length / dataPerPage
+                            )}
+                            nextPage={() => pagination("increment")}
+                            prevPage={() => pagination("decrement")}
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )
+                      // (
+                      //   <div className="alerts-table">
+                      //     <Table
+                      //       columnNames={security_td}
+                      //       data={security_data.slice(
+                      //         currentPage * dataPerPage - dataPerPage,
+                      //         currentPage * dataPerPage
+                      //       )}
+                      //       offset={currentPage * dataPerPage - dataPerPage}
+                      //     ></Table>
+
+                      //     <Pagination
+                      //       currentPage={currentPage}
+                      //       lastPage={Math.ceil(
+                      //         security_data.length / dataPerPage
+                      //       )}
+                      //       nextPage={() => pagination("increment")}
+                      //       prevPage={() => pagination("decrement")}
+                      //     />
+                      //   </div>
+                      // )
+                    }
+                  </div>
+                ) : (
+                  <p className="noData">No Data to Display</p>
+                )}
+              </div>
             )}
           </div>
         )}

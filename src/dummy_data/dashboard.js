@@ -45,7 +45,7 @@ export const dashboard_card_details = [
   },
   {
     card_name: "Total Cameras Connected",
-    count: "658",
+    count: "98",
      name:"Total Count",
     img: camera,
     content:"Total count of active cameras at DTDC warehouse"
@@ -93,7 +93,7 @@ export const doughnut_graph_data = {
   datasets: [
     {
       label: "Active Cameras",
-      data: [19, 1],
+      data: [98, 1],
       backgroundColor: ["rgba(75, 192, 192, 0.8)", "rgba(255, 159, 64, 0.8)"],
       borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 159, 64, 1)"],
       borderWidth: 1,
