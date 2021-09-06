@@ -54,8 +54,9 @@ export default function Anpr() {
       <Menu />
       <div className="anpr">
         <div className="baygates">
-          {sites.map((site) => (
+          {sites.map((site, index) => (
             <BayGatesButtons
+              id={"Baygate-" + index}
               bg_name={site}
               isActive={site === activeBayGate}
               onClick={() => {

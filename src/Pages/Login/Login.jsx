@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import username from "../../components/Images/username-icon.png";
 import eye_icon from "../../components/Images/visibility-off.png";
 import eye_icon1 from "../../components/Images/visibility-on.png";
+import gif from "../../components/Images/4.gif"
 // import bk_img from "../../components/Images/4.gif";
 import { useState } from "react";
 
@@ -12,8 +13,8 @@ export default function RoleLogin() {
 
   const [uname, setuname] = useState();
   const [password, setpassword] = useState();
-  const [accessKey, setaccessKey] = useState();
-  const [data, setData] = useState();
+  // const [accessKey, setaccessKey] = useState();
+  // const [data, setData] = useState();
 
   const history = useHistory();
 
@@ -45,6 +46,7 @@ export default function RoleLogin() {
       <div className="rl-login">
         {/* <img src={bk_img} alt="" /> */}
         <div className="rl-info">
+          <img src={gif} alt="gif" className="gif" />
           <h2>Welcome to DTDC</h2>
           <p className="info">
             To keep connected with us please login with your personal info

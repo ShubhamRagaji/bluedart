@@ -13,15 +13,16 @@
 
     .rl-info {
       width: 32vw;
-      height: 11.6vh;
+      height: 100%;
       padding: 25vw 18vw 8vw 4vw;
       color: white;
       border-bottom-left-radius: 2vw;
       border-top-left-radius: 2vw;
       background-size: auto;
       opacity: 96%;
-      background-image: url("../../components/Images/4.gif");
       clip-path: polygon(0% 0%, 74% 0%, 89% 50%, 75% 100%, 0% 100%);
+      position: relative;
+      background: #001a38;
 
       h2 {
         margin-bottom: 2vw;
@@ -30,6 +31,14 @@
       .info {
         font-size: 1.2vw;
         margin-left: 4vw;
+      }
+
+      .gif {
+        position: absolute;
+        top: 0;
+        left: 6%;
+        z-index: -1;
+        width: 41vw;
       }
     }
   }
