@@ -100,11 +100,13 @@ export default function Alerts() {
                 if (item === "Business Analysis") {
                   setactiveAnalysis(item);
                   setactiveBayGate("All Alerts");
+                  setactiveFilteredButton("All");
                   setdataToDisplay(data);
                 } else if (item === "Security Analysis") {
                   setactiveAnalysis(item);
                   setactiveBayGate("All Alerts");
                   setdataToDisplay(security_data);
+                  setactiveSecAnalysisBtn("All");
                   setactiveBayGate("BayGate 6");
                   setCurrentPage(1);
                 }
@@ -298,7 +300,6 @@ export default function Alerts() {
                 type={activity.type}
                 startTime={activity.startTime}
                 endTime={activity.endTime}
-                worker={activity.worker}
                 location={activity.location}
                 actTime={activity.actTime}
                 actLocation={activity.actLocation}
@@ -308,6 +309,7 @@ export default function Alerts() {
                 mask={activity.mask}
                 soc_distancing={activity.soc_distancing}
                 mishandling={activity.mishandling}
+                media={activity.media}
               />
             ))}
           </div>

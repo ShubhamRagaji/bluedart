@@ -17,24 +17,24 @@ import pl_24 from "../components/Images/Alerts/24_pl.png";
 import pl1_24 from "../components/Images/Alerts/24_pl1.png";
 
 //Security Analysis Images
-import sec_1 from "../components/Images/Sec_analysis/Box_Throwing/1.png"
-import sec_2 from "../components/Images/Sec_analysis/Box_Throwing/2.png"
-import sec_3 from "../components/Images/Sec_analysis/Box_Throwing/3.png"
-import sec_4 from "../components/Images/Sec_analysis/Box_Throwing/4.png"
-import sec_5 from "../components/Images/Sec_analysis/Box_Throwing/5.png"
-import sec_6 from "../components/Images/Sec_analysis/Mishandling/mishandling_1.png"
-import sec_7 from "../components/Images/Sec_analysis/Mishandling/mishandling_2.png"
-import sec_8 from "../components/Images/Sec_analysis/Mishandling/mishandling_3.png"
-import sec_9 from "../components/Images/Sec_analysis/Mishandling/mishandling_4.png"
-import sec_10 from "../components/Images/Sec_analysis/Mishandling/mishandling_5.png"
-import sec_12 from "../components/Images/Sec_analysis/Mishandling/mishandling_7.png"
-import sec_13 from "../components/Images/Sec_analysis/Mishandling/mishandling_8.png"
-import sec_14 from "../components/Images/Sec_analysis/Mishandling/mishandling_9.png"
-import sec_15 from "../components/Images/Sec_analysis/Mishandling/mishandling_10.png"
-import sec_16 from "../components/Images/Sec_analysis/Mishandling/mishandling_11.png"
-import sec_17 from "../components/Images/Sec_analysis/Mishandling/mishandling_12.png"
-import sec_18 from "../components/Images/Sec_analysis/Mishandling/mishandling_13.png"
-import sec_19 from "../components/Images/Sec_analysis/Mishandling/mishandling_14.png"
+import sec_1 from "../components/Images/Sec_analysis/Box_Throwing/1.png";
+import sec_2 from "../components/Images/Sec_analysis/Box_Throwing/2.png";
+import sec_3 from "../components/Images/Sec_analysis/Box_Throwing/3.png";
+import sec_4 from "../components/Images/Sec_analysis/Box_Throwing/4.png";
+import sec_5 from "../components/Images/Sec_analysis/Box_Throwing/5.png";
+import sec_6 from "../components/Images/Sec_analysis/Mishandling/mishandling_1.png";
+import sec_7 from "../components/Images/Sec_analysis/Mishandling/mishandling_2.png";
+import sec_8 from "../components/Images/Sec_analysis/Mishandling/mishandling_3.png";
+import sec_9 from "../components/Images/Sec_analysis/Mishandling/mishandling_4.png";
+import sec_10 from "../components/Images/Sec_analysis/Mishandling/mishandling_5.png";
+import sec_12 from "../components/Images/Sec_analysis/Mishandling/mishandling_7.png";
+import sec_13 from "../components/Images/Sec_analysis/Mishandling/mishandling_8.png";
+import sec_14 from "../components/Images/Sec_analysis/Mishandling/mishandling_9.png";
+import sec_15 from "../components/Images/Sec_analysis/Mishandling/mishandling_10.png";
+import sec_16 from "../components/Images/Sec_analysis/Mishandling/mishandling_11.png";
+import sec_17 from "../components/Images/Sec_analysis/Mishandling/mishandling_12.png";
+import sec_18 from "../components/Images/Sec_analysis/Mishandling/mishandling_13.png";
+import sec_19 from "../components/Images/Sec_analysis/Mishandling/mishandling_14.png";
 
 export const alerts = [
   {
@@ -262,7 +262,6 @@ export const actDuration = [
     type: "Loading",
     startTime: "10:00:00",
     endTime: "10:25:00",
-    worker: 7,
     location: "Mumbai",
     actTime: "25 mins",
     actLocation: "Bay Gate 2",
@@ -272,13 +271,13 @@ export const actDuration = [
     mask: "-",
     soc_distancing: "-",
     mishandling: "-",
+    media: "https://drive.google.com/file/d/1jMu4S3Z4NH673E3QR-ockzc0HFYHpt0n/view?usp=sharing",
   },
   {
     date: "15/08/2021",
     type: "Loading",
     startTime: "11:42:00",
     endTime: "11:54:00",
-    worker: 4,
     location: "Mumbai",
     actTime: "12 mins",
     actLocation: "Bay Gate 2",
@@ -288,13 +287,13 @@ export const actDuration = [
     mask: "-",
     soc_distancing: "-",
     mishandling: "-",
+    media: "https://drive.google.com/file/d/1e9JYwrxBlJwIjWHFVAYJZgdofXZT76dv/view?usp=sharing",
   },
   {
     date: "24/08/2021",
     type: "Unloading",
     startTime: "08:56:00",
     endTime: "09:11:00",
-    worker: 4,
     location: "Mumbai",
     actTime: "15 mins",
     actLocation: "Bay Gate 2",
@@ -304,13 +303,13 @@ export const actDuration = [
     mask: "-",
     soc_distancing: "-",
     mishandling: "-",
+    media: "https://drive.google.com/file/d/13ruukW402Tw4YNBCh6I4ESkSGya2f7Ws/view?usp=sharing",
   },
   {
     date: "24/08/2021",
     type: "Loading",
     startTime: "09:48:00",
     endTime: "10:07:00",
-    worker: 5,
     location: "Mumbai",
     actTime: "21 mins",
     actLocation: "Bay Gate 2",
@@ -320,6 +319,7 @@ export const actDuration = [
     mask: "-",
     soc_distancing: "-",
     mishandling: "-",
+    media: "https://drive.google.com/file/d/1JAJEAxT4DWDHMYjOyRl0_nJ1kWdXbX2C/view?usp=sharing",
   },
 ];
 
@@ -334,7 +334,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_1
+    img_url: sec_1,
   },
   {
     time: "11:51:40",
@@ -344,7 +344,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url: sec_6
+    img_url: sec_6,
   },
   {
     time: "11:51:50",
@@ -354,7 +354,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_3
+    img_url: sec_3,
   },
   {
     time: "11:53:37",
@@ -364,7 +364,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_4
+    img_url: sec_4,
   },
   {
     time: "11:53:46",
@@ -374,7 +374,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url: sec_7
+    img_url: sec_7,
   },
   {
     time: "11:53:55",
@@ -384,7 +384,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_2
+    img_url: sec_2,
   },
   {
     time: "11:54:00",
@@ -394,7 +394,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_5
+    img_url: sec_5,
   },
 
   {
@@ -405,7 +405,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_8
+    img_url: sec_8,
   },
   {
     time: "11:56:41",
@@ -415,7 +415,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_9
+    img_url: sec_9,
   },
   {
     time: "11:59:40",
@@ -425,7 +425,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_10
+    img_url: sec_10,
   },
 
   {
@@ -436,7 +436,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_12
+    img_url: sec_12,
   },
   {
     time: "11:54:01",
@@ -446,7 +446,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_13
+    img_url: sec_13,
   },
   {
     time: "11:54:05",
@@ -456,7 +456,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_14
+    img_url: sec_14,
   },
   {
     time: "11:51:37",
@@ -466,7 +466,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_15
+    img_url: sec_15,
   },
   {
     time: "11:51:38",
@@ -476,7 +476,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_16
+    img_url: sec_16,
   },
   {
     time: "11:53:40",
@@ -486,7 +486,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_17
+    img_url: sec_17,
   },
   {
     time: "11:53:45",
@@ -496,7 +496,7 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_18
+    img_url: sec_18,
   },
   {
     time: "11:56:16",
@@ -506,6 +506,6 @@ export const sec_analysis = [
     camera_name: "CP IP Cam",
     location: "Mumbai",
     img: alert_png,
-    img_url:sec_19
+    img_url: sec_19,
   },
 ];
