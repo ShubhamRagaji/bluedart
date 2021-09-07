@@ -102,6 +102,7 @@ export default function Alerts() {
                   setactiveBayGate("All Alerts");
                   setactiveFilteredButton("All");
                   setdataToDisplay(data);
+                  setactivityDuration(false)
                 } else if (item === "Security Analysis") {
                   setactiveAnalysis(item);
                   setactiveBayGate("All Alerts");
@@ -109,6 +110,8 @@ export default function Alerts() {
                   setactiveSecAnalysisBtn("All");
                   setactiveBayGate("BayGate 6");
                   setCurrentPage(1);
+                  setactivityDuration(false)
+
                 }
               }}
             >
