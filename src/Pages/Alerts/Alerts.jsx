@@ -20,6 +20,9 @@ export default function Alerts() {
   const filterButtons = ["All", "Forklift", "Pallete", "Activity Duration"];
   const security_filterButtons = ["All", "Box Throwing", "Mishandling"];
 
+  const [date, setdate] = useState("");
+  const [newDate, setnewDate] = useState();
+
   const td = [
     "Sr. No",
     "Priority",
@@ -47,6 +50,7 @@ export default function Alerts() {
   const security_data = sec_analysis;
 
   const act_Duration = actDuration;
+  const [act_Duration1, setact_Duration1] = useState(act_Duration);
 
   //Pagination
   const dataPerPage = 10;
@@ -60,14 +64,28 @@ export default function Alerts() {
     }
   };
 
+  const filteredDateData = (dt) => {
+    let splitted_date = dt.split("-");
+    let splitData =
+      splitted_date[2] + "/" + splitted_date[1] + "/" + splitted_date[0];
+    let arr = [];
+    act_Duration.map((items) => {
+      if (splitData === items.date) {
+        arr.push(items);
+      }
+    });
+    setact_Duration1(arr);
+  };
+
   return (
     <div className="Alerts">
       <Header heading="Alerts" />
       <Menu />
       <div className="alerts">
         <div className="baygates">
-          {sites.map((site) => (
+          {sites.map((site, index) => (
             <BayGatesButtons
+              id={index}
               bg_name={site}
               isActive={site === activeBayGate}
               onClick={() => {
@@ -78,10 +96,12 @@ export default function Alerts() {
                   setactivityDuration(false);
                   setactiveFilteredButton("All");
                   setactiveSecAnalysisBtn("All");
+                  // setactivityDuration(false)
                 } else if (site === "BayGate 6" || site === "BayGate 9") {
                   setactiveFilteredButton("All");
                   setactiveSecAnalysisBtn("All");
                   setdataToDisplay(data);
+                  setactivityDuration(false);
                 }
               }}
             />
@@ -102,7 +122,7 @@ export default function Alerts() {
                   setactiveBayGate("All Alerts");
                   setactiveFilteredButton("All");
                   setdataToDisplay(data);
-                  setactivityDuration(false)
+                  setactivityDuration(false);
                 } else if (item === "Security Analysis") {
                   setactiveAnalysis(item);
                   setactiveBayGate("All Alerts");
@@ -110,8 +130,7 @@ export default function Alerts() {
                   setactiveSecAnalysisBtn("All");
                   setactiveBayGate("BayGate 6");
                   setCurrentPage(1);
-                  setactivityDuration(false)
-
+                  setactivityDuration(false);
                 }
               }}
             >
@@ -122,8 +141,9 @@ export default function Alerts() {
 
         {activeAnalysis === "Business Analysis" ? (
           <div className="bussinessAnalysis-filterButtons bounceInDown">
-            {filterButtons.map((filterButton) => (
+            {filterButtons.map((filterButton, index) => (
               <button
+                id={"btn-" + index}
                 className={
                   activeFilteredButton === filterButton
                     ? "filter_btns activefilteredbtn"
@@ -149,6 +169,7 @@ export default function Alerts() {
                     setactivityDuration(false);
                     setdataToDisplay(pallete_data);
                   } else if (filterButton === "Activity Duration") {
+                    setact_Duration1(actDuration);
                     if (
                       activeBayGate === "All Alerts" ||
                       activeBayGate === "BayGate 2"
@@ -199,6 +220,16 @@ export default function Alerts() {
           </div>
         )}
 
+        {activityDuration && (
+          <input
+            type="date"
+            className="date"
+            name="date"
+            value={newDate}
+            onChange={(e) => filteredDateData(e.target.value)}
+          />
+        )}
+
         {dataToDisplay && (
           <div>
             {activeAnalysis === "Business Analysis" ? (
@@ -235,57 +266,33 @@ export default function Alerts() {
                 )}
               </div>
             ) : (
-              // -------------------------------------------------------
               <div>
                 {activeBayGate === "All Alerts" ||
                 activeBayGate === "BayGate 6" ? (
                   <div>
-                    {
-                      activeAnalysis === "Security Analysis" ? (
-                        <div className="alerts-table">
-                          <Table
-                            columnNames={td}
-                            data={dataToDisplay.slice(
-                              currentPage * dataPerPage - dataPerPage,
-                              currentPage * dataPerPage
-                            )}
-                            offset={currentPage * dataPerPage - dataPerPage}
-                          ></Table>
+                    {activeAnalysis === "Security Analysis" ? (
+                      <div className="alerts-table">
+                        <Table
+                          columnNames={td}
+                          data={dataToDisplay.slice(
+                            currentPage * dataPerPage - dataPerPage,
+                            currentPage * dataPerPage
+                          )}
+                          offset={currentPage * dataPerPage - dataPerPage}
+                        ></Table>
 
-                          <Pagination
-                            currentPage={currentPage}
-                            lastPage={Math.ceil(
-                              dataToDisplay.length / dataPerPage
-                            )}
-                            nextPage={() => pagination("increment")}
-                            prevPage={() => pagination("decrement")}
-                          />
-                        </div>
-                      ) : (
-                        ""
-                      )
-                      // (
-                      //   <div className="alerts-table">
-                      //     <Table
-                      //       columnNames={security_td}
-                      //       data={security_data.slice(
-                      //         currentPage * dataPerPage - dataPerPage,
-                      //         currentPage * dataPerPage
-                      //       )}
-                      //       offset={currentPage * dataPerPage - dataPerPage}
-                      //     ></Table>
-
-                      //     <Pagination
-                      //       currentPage={currentPage}
-                      //       lastPage={Math.ceil(
-                      //         security_data.length / dataPerPage
-                      //       )}
-                      //       nextPage={() => pagination("increment")}
-                      //       prevPage={() => pagination("decrement")}
-                      //     />
-                      //   </div>
-                      // )
-                    }
+                        <Pagination
+                          currentPage={currentPage}
+                          lastPage={Math.ceil(
+                            dataToDisplay.length / dataPerPage
+                          )}
+                          nextPage={() => pagination("increment")}
+                          prevPage={() => pagination("decrement")}
+                        />
+                      </div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 ) : (
                   <p className="noData">No Data to Display</p>
@@ -297,24 +304,28 @@ export default function Alerts() {
 
         {activityDuration && (
           <div className="activityDuration">
-            {act_Duration.map((activity) => (
-              <ActivityDuration
-                date={activity.date}
-                type={activity.type}
-                startTime={activity.startTime}
-                endTime={activity.endTime}
-                location={activity.location}
-                actTime={activity.actTime}
-                actLocation={activity.actLocation}
-                peopleonDeck={activity.peopleonDeck}
-                vehType={activity.vehType}
-                pl_fk_violation={activity.pl_fk_violation}
-                mask={activity.mask}
-                soc_distancing={activity.soc_distancing}
-                mishandling={activity.mishandling}
-                media={activity.media}
-              />
-            ))}
+            {act_Duration1.length > 0 ? (
+              act_Duration1.map((activity) => (
+                <ActivityDuration
+                  date={activity.date}
+                  type={activity.type}
+                  startTime={activity.startTime}
+                  endTime={activity.endTime}
+                  location={activity.location}
+                  actTime={activity.actTime}
+                  actLocation={activity.actLocation}
+                  peopleonDeck={activity.peopleonDeck}
+                  vehType={activity.vehType}
+                  pl_fk_violation={activity.pl_fk_violation}
+                  mask={activity.mask}
+                  soc_distancing={activity.soc_distancing}
+                  mishandling={activity.mishandling}
+                  media={activity.media}
+                />
+              ))
+            ) : (
+              <p className="noData">No Data to Display</p>
+            )}
           </div>
         )}
       </div>
