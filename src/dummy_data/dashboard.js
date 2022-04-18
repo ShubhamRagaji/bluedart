@@ -9,60 +9,59 @@ import forklift from "../components/Images/icons/fork.jpg";
 
 export const dashboard_card_details = [
   {
-    card_name: "Vehicle Counter",
+    card_name: "Vehicle In",
     count: "43",
-     name:"Total Count",
+    name: "Total Count",
     img: vehicle,
-    content:"Total count of Loading & Unloading vehicles from the collected videos of the DTDC warehouse"
+    content:
+      "Total count of Loading & Unloading vehicles from the collected videos of the DTDC warehouse",
+  },
+
+  {
+    card_name: "Vehicle Out",
+    count: "43",
+    name: "Total Count",
+    img: vehicle,
+    content:
+      "Total count of Loading & Unloading vehicles from the collected videos of the DTDC warehouse",
   },
   {
     card_name: "Loading Vehicle Counter",
     count: "27",
-     name:"Total Count",
+    name: "Total Count",
     img: loading,
-    content:"Total count of Loading vehicles from the collected videos of the DTDC warehouse"
+    content:
+      "Total count of Loading vehicles from the collected videos of the DTDC warehouse",
   },
   {
     card_name: "Unloading Vehicle Counter",
     count: "16",
-     name:"Total Count",
+    name: "Total Count",
     img: unloading,
-    content:"Total count of Unloading vehicles from the collected videos of the DTDC warehouse"
+    content:
+      "Total count of Unloading vehicles from the collected videos of the DTDC warehouse",
   },
   {
     card_name: "Number Plate Recognized",
     count: "18",
-     name:"Total Count",
+    name: "Total Count",
     img: np,
-    content:"Total count of correctly recognized vehicle number plates using ANPR algorithm"
+    content:
+      "Total count of correctly recognized vehicle number plates using ANPR algorithm",
   },
   {
     card_name: "Avg Vehicle Per Hour",
     count: "2",
-     name:"Total Count",
+    name: "Total Count",
     img: vehicle1,
-    content:"Average count of vehicles visiting per hour"
+    content: "Average count of vehicles visiting per hour",
   },
   {
     card_name: "Total Cameras Connected",
     count: "98",
-     name:"Total Count",
+    name: "Total Count",
     img: camera,
-    content:"Total count of active cameras at DTDC warehouse"
-  },
-  {
-    card_name: "Average Pallete Time",
-    count: "1hr 43min",
-     name:"Total Time",
-    img: pallete,
-    content:"Average time of Palletes used for Loading and Unloading activity from the collected videos at DTDC warehouse"
-  },
-  {
-    card_name: "Average Forklift Time",
-    count: "1hr 14min",
-     name:"Total Time",
-    img: forklift,
-    content:"Average time of Forklift usage for Loading and Unloading activity from the collected videos at DTDC warehouse"
+    content: "Total count of active cameras at DTDC warehouse",
   },
 ];
 
@@ -126,11 +125,7 @@ export const horizontal_graph_data = {
 const rand = () => Math.floor(Math.random() * 255);
 
 export const crazy_graph_data = {
-  labels: [
-    "11-08-2021",
-    "15-08-2021",
-    "24-08-2021"
-  ],
+  labels: ["11-08-2021", "15-08-2021", "24-08-2021"],
   datasets: [
     {
       type: "line",
@@ -152,7 +147,7 @@ export const crazy_graph_data = {
       type: "bar",
       label: "Avg Unloading Time in Min",
       backgroundColor: "rgba(0,0,139,0.76)",
-      data: [10, 35, 15],   
+      data: [10, 35, 15],
     },
   ],
 };

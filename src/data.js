@@ -7,7 +7,6 @@ import video1 from "../src/components/Videos/video1.mp4";
 import video2 from "../src/components/Videos/video2.mp4";
 import camera from "../src/components/Images/icons/anpr.png";
 
-
 export const alerts = [
   {
     name: "Shubham",
@@ -139,7 +138,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -149,7 +148,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video2
+    video: video2,
   },
   {
     warehouse_location: "Abc",
@@ -159,7 +158,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -169,7 +168,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -179,7 +178,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -189,7 +188,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -199,7 +198,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -209,7 +208,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -219,7 +218,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -229,7 +228,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -239,7 +238,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -249,7 +248,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -259,7 +258,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -269,7 +268,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -279,7 +278,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -289,7 +288,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
   {
     warehouse_location: "Abc",
@@ -299,7 +298,7 @@ export const anpr = [
     exit: "12",
     duration: "10",
     img: mp4,
-    video: video1
+    video: video1,
   },
 ];
 
@@ -345,19 +344,21 @@ export const videos = [
   },
 ];
 
-export const progressBar = [{
-  name:"Mask",
-  percent:"65%"
-},
-{
-  name:"Palette & Forklift",
-  percent:"96%"
-},
-{
-  name:"Social Distancing",
-  percent:"88%"
-},
-{
-  name:"Loitering",
-  percent:"96%"
-},]
+export const progressBar = [
+  {
+    name: "Mask",
+    percent: "65%",
+  },
+  {
+    name: "Palette & Forklift",
+    percent: "96%",
+  },
+  {
+    name: "Social Distancing",
+    percent: "88%",
+  },
+  {
+    name: "Loitering",
+    percent: "96%",
+  },
+];

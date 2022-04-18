@@ -47,7 +47,7 @@ export default function RoleLogin() {
         {/* <img src={bk_img} alt="" /> */}
         <div className="rl-info">
           <img src={gif} alt="gif" className="gif" />
-          <h2>Welcome to DTDC</h2>
+          <h2>Welcome to BLUE DART</h2>
           <p className="info">
             To keep connected with us please login with your personal info
           </p>
