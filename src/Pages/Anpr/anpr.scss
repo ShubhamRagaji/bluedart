@@ -6,6 +6,17 @@
     padding: 0vw 1vw 1vw 1vw;
     border-radius: 0.4vw;
     margin-top: 5.6vw;
+    height: 86vh;
+
+    table {
+      margin-top: 1vw;
+    }
+
+    .anpr-table1 {
+      td {
+        padding: 0.6vw !important;
+      }
+    }
 
     .baygates {
       display: flex;
@@ -20,7 +31,9 @@
     }
 
     .anpr-pagination {
-      margin-top: 3.8vw;
+      .paginationContainer {
+        bottom: 4%;
+      }
     }
   }
 }

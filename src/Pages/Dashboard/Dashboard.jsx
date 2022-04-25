@@ -10,6 +10,7 @@ import {
   horizontal_graph_data,
   crazy_graph_data,
   progressBar,
+  bay_avgTime__data,
 } from "../../dummy_data/dashboard";
 import { Bar, Doughnut } from "react-chartjs-2";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
@@ -21,6 +22,7 @@ const barGraphData = bar_graph_data;
 const doughnutGraphData = doughnut_graph_data;
 const horizontalGraphData = horizontal_graph_data;
 const crazyGraphData = crazy_graph_data;
+const baywiseAvgTimeData = bay_avgTime__data;
 
 export default function Dashboard() {
   const [progressedData, setprogressedData] = useState(progressBar);
@@ -77,7 +79,7 @@ export default function Dashboard() {
     <div className="Dashboard">
       <Header heading="Dashboard" />
       <Menu />
-      <div className="filters">
+      {/* <div className="filters">
         <div className="select">
           <select name="slct" id="slct">
             <option value={""} selected disabled>
@@ -88,7 +90,7 @@ export default function Dashboard() {
         </div>
         <button className="filterbutton">Weekly Reports</button>
         <button className="filterbutton">Monthly Reports</button>
-      </div>
+      </div> */}
       <div className="dash">
         <div className="dashboard">
           {card.map((detail) => (
@@ -151,7 +153,23 @@ export default function Dashboard() {
             />
           </div>
 
-          <div className="rangeBar">
+          <div className="barGraph">
+            <p>Baywise Average Idling Time</p>
+            <Bar
+              height={400}
+              width={950}
+              data={baywiseAvgTimeData}
+              options={crazyGraphOptions}
+            />
+            <img
+              src={information}
+              alt="information"
+              className="information actAnalyzer"
+              data-tip="Baywise Average Idling Time"
+            />
+          </div>
+
+          {/* <div className="rangeBar">
             <p className="rangeBar_Header">Guideline Compliance Score</p>
             <hr />
 
@@ -169,7 +187,7 @@ export default function Dashboard() {
               className="information progressBar"
               data-tip="Average percentage of the activity followed by the workers"
             />
-          </div>
+          </div> */}
 
           <div className="info"></div>
         </div>

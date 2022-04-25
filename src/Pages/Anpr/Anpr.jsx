@@ -2,30 +2,39 @@ import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import "./anpr.scss";
-import { anpr_data } from "../../dummy_data/anpr";
+import { anpr_data, bay_data, veh_data } from "../../dummy_data/anpr";
 import BayGatesButtons from "../../components/BayGatesButtons/BayGatesButtons";
 import Table from "../../components/Tables/Table";
 import Pagination from "../../components/pagination/Pagination";
 
 export default function Anpr() {
-  const [activeBayGate, setactiveBayGate] = useState("All Reports");
+  const [activeBayGate, setactiveBayGate] = useState("Bay Activity");
 
-  const sites = ["All Reports", "Main Gate", "BayGate 6", "BayGate 9"];
+  const sites = ["Bay Activity", "Vehicle Entry / Exit"];
 
-  const columnNames = [
+  const bayColumnNames = [
     "Sr No",
-    "Warehouse Location",
-    "Camera Location",
-    "Vehicle Number",
-    "Entry  Date & Time",
-    "Exit  Date & Time",
-    "Vehicle Type",
-    "Direction",
-    "Total Duration",
-    "Media",
+    "Vehile Arrival TS",
+    "Vehicle Departure TS",
+    "Activity Start",
+    "Activity End",
+    "No. of Employees",
+    "Forkift Used",
+    "Pallette Used",
   ];
 
-  const data = anpr_data;
+  const vehColumnNames1 = [
+    "Sr No",
+    "Vehicle Number",
+    "Vehile IN Date & Time",
+    "Vehicle Out Date & Time",
+    "Media"
+    
+  ];
+
+  const data = bay_data;
+  const data1 = veh_data;
+
   const [dataToDisplay, setdataToDisplay] = useState(data);
 
   //Pagination
@@ -50,6 +59,7 @@ export default function Anpr() {
 
   return (
     <div className="Anpr">
+      {console.log(activeBayGate)}
       <Header heading="ANPR" />
       <Menu />
       <div className="anpr">
@@ -62,21 +72,40 @@ export default function Anpr() {
               onClick={() => {
                 setactiveBayGate(site);
                 setCurrentPage(1);
-                if (site === "Main Gate") {
-                  filteredData();
-                } else if (site === "All Reports") {
+                if (site === "Vehicle Entry / Exit") {
+                  setdataToDisplay(data1);
+                } else if (site === "Bay Activity") {
                   setdataToDisplay(data);
-                } else {
-                  setdataToDisplay(null);
                 }
               }}
             />
           ))}
         </div>
-        {dataToDisplay ? (
+
+        {dataToDisplay && activeBayGate === "Bay Activity" ? (
           <div className="anpr-table">
             <Table
-              columnNames={columnNames}
+              columnNames={bayColumnNames}
+              data={dataToDisplay.slice(
+                currentPage * dataPerPage - dataPerPage,
+                currentPage * dataPerPage
+              )}
+              offset={currentPage * dataPerPage - dataPerPage}
+            ></Table>
+
+            <div className="anpr-pagination">
+              <Pagination
+                currentPage={currentPage}
+                lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
+                nextPage={() => pagination("increment")}
+                prevPage={() => pagination("decrement")}
+              />
+            </div>
+          </div>
+        ) : activeBayGate === "Vehicle Entry / Exit" ? (
+          <div className="anpr-table anpr-table1">
+            <Table
+              columnNames={vehColumnNames1}
               data={dataToDisplay.slice(
                 currentPage * dataPerPage - dataPerPage,
                 currentPage * dataPerPage
@@ -94,7 +123,7 @@ export default function Anpr() {
             </div>
           </div>
         ) : (
-          <p className="noData">No Data to display</p>
+          ""
         )}
       </div>
     </div>

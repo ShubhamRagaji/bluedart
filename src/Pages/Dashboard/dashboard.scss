@@ -162,15 +162,15 @@
         }
       }
 
+      .actAnalyzer {
+        position: absolute;
+        top: 2.8%;
+        right: 2%;
+      }
+
       .CrazyGraph {
         width: 57.6%;
         position: relative;
-
-        .actAnalyzer {
-          position: absolute;
-          top: 2.8%;
-          right: 2%;
-        }
 
         canvas {
           box-shadow: 3px 3px 8px grey;

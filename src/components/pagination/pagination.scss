@@ -12,7 +12,12 @@ $desk: 100/1980;
   justify-content: center;
   align-items: center;
   font-family: Segoe UI;
-  margin: auto;
+  position: absolute;
+  bottom: 10%;
+  left: 52%;
+  transform: translateX(-50%);
+  // margin: auto;
+  // margin-top: 4vw;
 
   .leftArrow {
     width: 26 * $desk + vw;

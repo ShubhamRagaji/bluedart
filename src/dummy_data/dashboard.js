@@ -13,8 +13,7 @@ export const dashboard_card_details = [
     count: "43",
     name: "Total Count",
     img: vehicle,
-    content:
-      "Total count of Loading & Unloading vehicles from the collected videos of the DTDC warehouse",
+    content: "Total count of vehicles",
   },
 
   {
@@ -22,32 +21,14 @@ export const dashboard_card_details = [
     count: "43",
     name: "Total Count",
     img: vehicle,
-    content:
-      "Total count of Loading & Unloading vehicles from the collected videos of the DTDC warehouse",
+    content: "Total count of vehicles",
   },
   {
-    card_name: "Loading Vehicle Counter",
-    count: "27",
-    name: "Total Count",
-    img: loading,
-    content:
-      "Total count of Loading vehicles from the collected videos of the DTDC warehouse",
-  },
-  {
-    card_name: "Unloading Vehicle Counter",
-    count: "16",
-    name: "Total Count",
-    img: unloading,
-    content:
-      "Total count of Unloading vehicles from the collected videos of the DTDC warehouse",
-  },
-  {
-    card_name: "Number Plate Recognized",
-    count: "18",
-    name: "Total Count",
-    img: np,
-    content:
-      "Total count of correctly recognized vehicle number plates using ANPR algorithm",
+    card_name: "Average Vehicle Waiting Time",
+    count: "43",
+    name: "Total Time",
+    img: vehicle,
+    content: "Total Average Time",
   },
   {
     card_name: "Avg Vehicle Per Hour",
@@ -127,14 +108,14 @@ const rand = () => Math.floor(Math.random() * 255);
 export const crazy_graph_data = {
   labels: ["11-08-2021", "15-08-2021", "24-08-2021"],
   datasets: [
-    {
-      type: "line",
-      label: "Avg Activity Time",
-      borderColor: `rgb(${rand()}, ${rand()}, ${rand()})`,
-      borderWidth: 2,
-      fill: false,
-      data: [22.5, 30, 27.5],
-    },
+    // {
+    //   type: "line",
+    //   label: "Avg Activity Time",
+    //   borderColor: `rgb(${rand()}, ${rand()}, ${rand()})`,
+    //   borderWidth: 2,
+    //   fill: false,
+    //   data: [22.5, 30, 27.5],
+    // },
     {
       type: "bar",
       label: "Avg Loading Time in Min",
@@ -149,6 +130,34 @@ export const crazy_graph_data = {
       backgroundColor: "rgba(0,0,139,0.76)",
       data: [10, 35, 15],
     },
+  ],
+};
+
+export const bay_avgTime__data = {
+  labels: ["Bay1", "Bay2", "Bay3", "Bay4"],
+  datasets: [
+    // {
+    //   type: "line",
+    //   label: "Avg Activity Time",
+    //   borderColor: `rgb(${rand()}, ${rand()}, ${rand()})`,
+    //   borderWidth: 2,
+    //   fill: false,
+    //   data: [22.5, 30, 27.5],
+    // },
+    {
+      type: "bar",
+      label: "Avg Idling Time in Min",
+      backgroundColor: "rgba(216,43,35,0.8)",
+      data: [35, 25, 40, 20],
+      borderColor: "white",
+      borderWidth: 2,
+    },
+    // {
+    //   type: "bar",
+    //   label: "Avg Unloading Time in Min",
+    //   backgroundColor: "rgba(0,0,139,0.76)",
+    //   data: [10, 35, 15],
+    // },
   ],
 };
 

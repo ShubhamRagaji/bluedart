@@ -1,18 +1,19 @@
 .Table {
   width: 100%;
+
   table {
     border-collapse: collapse;
     width: 100%;
     font-size: 0.88vw;
     margin-top: 2vw;
     margin-bottom: 1vw;
-    min-height: 58vh;
+    // min-height: 58vh;
   }
 
   td,
   th {
     border: 1px solid #dddddd;
-    padding: 6px;
+    padding: 0.9vw;
     text-align: center;
   }
 

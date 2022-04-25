@@ -4,13 +4,13 @@ import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import Pagination from "../../components/pagination/Pagination";
 import Table from "../../components/Tables/Table";
-import { alerts, sec_analysis, actDuration } from "../../dummy_data/alerts";
+import { alerts } from "../../dummy_data/alerts";
 import "./alerts.scss";
 import ActivityDuration from "../../components/ActivityDuration/ActivityDuration";
 
 export default function Alerts() {
   const [activeBayGate, setactiveBayGate] = useState("All Alerts");
-  const [activeAnalysis, setactiveAnalysis] = useState("Business Analysis");
+  const [activeAnalysis, setactiveAnalysis] = useState("All");
   const [activeSecAnalysisBtn, setactiveSecAnalysisBtn] = useState("All");
   const [activeFilteredButton, setactiveFilteredButton] = useState("All");
   const [activityDuration, setactivityDuration] = useState(false);
@@ -25,10 +25,8 @@ export default function Alerts() {
 
   const td = [
     "Sr. No",
-    "Priority",
-    "Location",
-    "Camera Location",
     "Camera Name",
+    "Camera Location",
     "Alert",
     "Date & Time",
     "Media",
@@ -47,10 +45,7 @@ export default function Alerts() {
   const data = alerts;
   const [dataToDisplay, setdataToDisplay] = useState(data);
 
-  const security_data = sec_analysis;
 
-  const act_Duration = actDuration;
-  const [act_Duration1, setact_Duration1] = useState(act_Duration);
 
   //Pagination
   const dataPerPage = 10;
@@ -68,13 +63,6 @@ export default function Alerts() {
     let splitted_date = dt.split("-");
     let splitData =
       splitted_date[2] + "/" + splitted_date[1] + "/" + splitted_date[0];
-    let arr = [];
-    act_Duration.map((items) => {
-      if (splitData === items.date) {
-        arr.push(items);
-      }
-    });
-    setact_Duration1(arr);
   };
 
   return (
@@ -83,7 +71,7 @@ export default function Alerts() {
       <Menu />
       <div className="alerts">
         <div className="baygates">
-          {sites.map((site, index) => (
+          {/* {sites.map((site, index) => (
             <BayGatesButtons
               id={index}
               bg_name={site}
@@ -105,10 +93,10 @@ export default function Alerts() {
                 }
               }}
             />
-          ))}
+          ))} */}
         </div>
 
-        <div className="al-buttons bounceInDown">
+        {/* <div className="al-buttons bounceInDown">
           {analysisBtns.map((item) => (
             <button
               className={
@@ -137,9 +125,9 @@ export default function Alerts() {
               {item}
             </button>
           ))}
-        </div>
+        </div> */}
 
-        {activeAnalysis === "Business Analysis" ? (
+        {/* {activeAnalysis === "Business Analysis" ? (
           <div className="bussinessAnalysis-filterButtons bounceInDown">
             {filterButtons.map((filterButton, index) => (
               <button
@@ -218,9 +206,9 @@ export default function Alerts() {
               </button>
             ))}
           </div>
-        )}
+        )} */}
 
-        {activityDuration && (
+        {/* {activityDuration && (
           <input
             type="date"
             className="date"
@@ -228,81 +216,35 @@ export default function Alerts() {
             value={newDate}
             onChange={(e) => filteredDateData(e.target.value)}
           />
-        )}
+        )} */}
 
         {dataToDisplay && (
           <div>
-            {activeAnalysis === "Business Analysis" ? (
+            <div>
               <div>
-                {activeBayGate === "All Alerts" ||
-                activeBayGate === "BayGate 2" ? (
-                  <div>
-                    {activeAnalysis === "Business Analysis" ? (
-                      <div className="alerts-table">
-                        <Table
-                          columnNames={td}
-                          data={dataToDisplay.slice(
-                            currentPage * dataPerPage - dataPerPage,
-                            currentPage * dataPerPage
-                          )}
-                          offset={currentPage * dataPerPage - dataPerPage}
-                        ></Table>
-
-                        <Pagination
-                          currentPage={currentPage}
-                          lastPage={Math.ceil(
-                            dataToDisplay.length / dataPerPage
-                          )}
-                          nextPage={() => pagination("increment")}
-                          prevPage={() => pagination("decrement")}
-                        />
-                      </div>
-                    ) : (
-                      ""
+                <div className="alerts-table">
+                  <Table
+                    columnNames={td}
+                    data={dataToDisplay.slice(
+                      currentPage * dataPerPage - dataPerPage,
+                      currentPage * dataPerPage
                     )}
-                  </div>
-                ) : (
-                  <p className="noData">No Data to Display</p>
-                )}
-              </div>
-            ) : (
-              <div>
-                {activeBayGate === "All Alerts" ||
-                activeBayGate === "BayGate 6" ? (
-                  <div>
-                    {activeAnalysis === "Security Analysis" ? (
-                      <div className="alerts-table">
-                        <Table
-                          columnNames={td}
-                          data={dataToDisplay.slice(
-                            currentPage * dataPerPage - dataPerPage,
-                            currentPage * dataPerPage
-                          )}
-                          offset={currentPage * dataPerPage - dataPerPage}
-                        ></Table>
+                    offset={currentPage * dataPerPage - dataPerPage}
+                  ></Table>
 
-                        <Pagination
-                          currentPage={currentPage}
-                          lastPage={Math.ceil(
-                            dataToDisplay.length / dataPerPage
-                          )}
-                          nextPage={() => pagination("increment")}
-                          prevPage={() => pagination("decrement")}
-                        />
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                ) : (
-                  <p className="noData">No Data to Display</p>
-                )}
+                  <Pagination
+                    currentPage={currentPage}
+                    lastPage={Math.ceil(dataToDisplay.length / dataPerPage)}
+                    nextPage={() => pagination("increment")}
+                    prevPage={() => pagination("decrement")}
+                  />
+                </div>
               </div>
-            )}
+            </div>
           </div>
         )}
 
-        {activityDuration && (
+        {/* {activityDuration && (
           <div className="activityDuration">
             {act_Duration1.length > 0 ? (
               act_Duration1.map((activity) => (
@@ -327,7 +269,7 @@ export default function Alerts() {
               <p className="noData">No Data to Display</p>
             )}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

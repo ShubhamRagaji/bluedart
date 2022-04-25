@@ -1,9 +1,21 @@
 .Alerts {
+  overflow: hidden;
+
+  .alerts-table {
+    td {
+      padding: 0.6vw;
+    }
+
+    th {
+      padding: 1vw;
+    }
+  }
   .alerts {
     box-shadow: 3px 3px 8px grey;
     padding: 0vw 1vw 1vw 1vw;
     border-radius: 0.4vw;
-    margin: 5.6vw 2vw 1vw 6.4vw;
+    height: 82vh;
+    margin: 6vw 2vw 1vw 6.4vw;
 
     .baygates {
       display: flex;
