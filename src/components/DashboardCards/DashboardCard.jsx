@@ -9,18 +9,18 @@ export default function DashboardCard(props) {
       <div className="topPart">
         <p className="card_name">{props.card_name}</p>
 
-        <ReactTooltip
+       <ReactTooltip
           place="right"
           type="info"
           effect="solid"
           className="tooltip"
         />
-        <img
+        {/* <img
           src={information}
           alt="information"
           className="information"
           data-tip={props.content}
-        />
+        /> */}
       </div>
       <hr />
       <div className="count">

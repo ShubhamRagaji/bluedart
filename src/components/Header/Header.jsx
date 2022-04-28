@@ -1,13 +1,13 @@
 import React from "react";
 import user from "../Images/icons/user.png";
-import dtdc_logo from "../Images/bluedart.png";
+import bluedart_logo from "../Images/bluedart.png";
 import './header.scss'
 
 export default function Header(props) {
   return (
     <div className="Header">
       <div className="label">
-        <img src={dtdc_logo} alt="Bluedart" className="dtdc-logo" />
+        <img src={bluedart_logo} alt="Bluedart" className="bluedart-logo" />
         <button className="headingbtn" disabled>{props.heading}</button>
       </div>
       <div className="user">

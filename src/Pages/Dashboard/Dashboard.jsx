@@ -93,7 +93,7 @@ export default function Dashboard() {
       </div> */}
       <div className="dash">
         <div className="dashboard">
-          {card.map((detail) => (
+          {card.map((detail, index) => (
             <DashboardCard
               card_name={detail.card_name}
               count={detail.count}
@@ -108,34 +108,34 @@ export default function Dashboard() {
           <div className="barGraph">
             <p>Vehicle In & Out</p>
             <Bar data={barGraphData} options={barGraphOptions} />
-            <img
+            {/* <img
               src={information}
               alt="information"
               className="information vehInOut"
               data-tip="Per day calculations of vehicle In and Out"
-            />
+            /> */}
           </div>
 
           <div className="DoughnutGraph">
             <p>Active-Inactive Cameras</p>
             <Doughnut data={doughnutGraphData} />
-            <img
+            {/* <img
               src={information}
               alt="information"
               className="information activeInactiveCam"
               data-tip="Total count of active and inactive cameras"
-            />
+            /> */}
           </div>
           <div className="HorizontalGraph">
             <p>Total Alerts</p>
 
             <Bar data={horizontalGraphData} options={horizontalGraphOptions} />
-            <img
+            {/* <img
               src={information}
               alt="information"
               className="information totalAlerts"
               data-tip="Total count of alerts for specified usecase"
-            />
+            /> */}
           </div>
           <div className="CrazyGraph">
             <p>Daily Activity Analyzer</p>
@@ -145,28 +145,30 @@ export default function Dashboard() {
               data={crazyGraphData}
               options={crazyGraphOptions}
             />
-            <img
+            {/* <img
               src={information}
               alt="information"
               className="information actAnalyzer"
               data-tip="Per day calculations of Average Loading, Unloading and Activity time"
-            />
+            /> */}
           </div>
 
           <div className="barGraph">
             <p>Baywise Average Idling Time</p>
-            <Bar
-              height={400}
-              width={950}
-              data={baywiseAvgTimeData}
-              options={crazyGraphOptions}
-            />
-            <img
+            <div style={{ marginLeft: "-3vw", width : "33.4vw" }}>
+              <Bar
+                height={400}
+                width={950}
+                data={baywiseAvgTimeData}
+                options={crazyGraphOptions}
+              />
+            </div>
+            {/* <img
               src={information}
               alt="information"
               className="information actAnalyzer"
               data-tip="Baywise Average Idling Time"
-            />
+            /> */}
           </div>
 
           {/* <div className="rangeBar">
@@ -188,8 +190,40 @@ export default function Dashboard() {
               data-tip="Average percentage of the activity followed by the workers"
             />
           </div> */}
+          <div className="barGraph">
+            <p className="stst_label">Network Studies</p>
 
-          <div className="info"></div>
+            <div className="statistics">
+              <div className="stat_subpoints">
+                <div className="stat_left">
+                  <img src={information} alt="" className="inf" />
+                  <p>Latency</p>
+                </div>
+                <p className="stat_value">0.02MS</p>
+              </div>
+              <div className="stat_subpoints">
+                <div className="stat_left">
+                  <img src={information} alt="" className="inf" />
+                  <p>Packet Loss</p>
+                </div>
+                <p className="stat_value">20</p>
+              </div>
+              <div className="stat_subpoints">
+                <div className="stat_left">
+                  <img src={information} alt="" className="inf" />
+                  <p>Byte Sent</p>
+                </div>
+                <p className="stat_value">102 MB</p>
+              </div>
+              <div className="stat_subpoints">
+                <div className="stat_left">
+                  <img src={information} alt="" className="inf" />
+                  <p>Byte Received</p>
+                </div>
+                <p className="stat_value">115 MB</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

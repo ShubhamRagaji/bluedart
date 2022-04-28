@@ -28,8 +28,6 @@ export default function Anpr() {
     "Vehicle Number",
     "Vehile IN Date & Time",
     "Vehicle Out Date & Time",
-    "Media"
-    
   ];
 
   const data = bay_data;

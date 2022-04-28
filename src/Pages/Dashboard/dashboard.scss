@@ -198,5 +198,39 @@
         }
       }
     }
+
+    .statistics {
+      padding: 1vw 2vw;
+      width: 30vw;
+      box-shadow: 3px 3px 8px grey;
+
+      .stat_subpoints {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .stat_left {
+          display: flex;
+          align-items: center;
+          width: 16vw;
+          margin-bottom: 0.6vw;
+          box-shadow: 3px 3px 8px grey;
+          border-radius: 0.6vw;
+          padding-left: 0.8vw;
+          color: blue;
+        }
+        .stat_value {
+          background-color: rgba(216, 43, 35, 0.8);
+          color: white;
+          width: 4vw;
+          border-radius: 0.6vw;
+          padding: 0.6vw;
+        }
+        .inf {
+          width: 1vw;
+          margin-right: 0.6vw;
+        }
+      }
+    }
   }
 }
